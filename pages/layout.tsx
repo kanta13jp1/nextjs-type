@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 const Layout = ({ children }: Props) => {
   return (
     <div>
-      <nav className="flex flex-rows p-2 bg-red-500 text-white font-bold">
+      <nav className="flex-rows flex space-x-4 bg-red-500 p-2 font-bold text-white">
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
 };
 
 type Props = {
-  children?: ReactNode
-}
+  children?: ReactNode;
+};
 
 export default Layout;
