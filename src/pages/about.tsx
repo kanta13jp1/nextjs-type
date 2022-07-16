@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import Button from '@/components/atoms/button';
+
 import type { NextPage } from 'next';
 
 const About: NextPage = () => {
@@ -43,7 +45,12 @@ const About: NextPage = () => {
         <button className="bg-violet-500 hover:bg-violet-600 focus:outline-none focus:ring focus:ring-violet-300 active:bg-violet-700">
           Save changes
         </button>
-
+        <br />
+        <br />
+        <h2 className="decoration-sky-500">Button Componet</h2>
+        <Button color={'primary'} fullWidth={false} disabled={false}>
+          Button Componet
+        </Button>
         <ul role="list" className="divide-y divide-slate-200 p-6">
           <li className="flex py-4 first:pt-0 last:pb-0">
             <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
