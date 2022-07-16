@@ -17,6 +17,7 @@ export type Product = {
 };
 
 export type ProductResponse = {
+  isFetched: boolean;
   count: number;
   data: Product[];
 };

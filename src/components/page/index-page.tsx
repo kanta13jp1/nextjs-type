@@ -65,8 +65,8 @@ export const IndexPage = (): JSX.Element => {
     if (products.isFetched) {
       setPageItem({
         ...pageItem,
-        totalCount: products.data.data.count,
-        totalPage: Math.ceil(products.data.data.count / pageItem.perPage),
+        totalCount: products.data!.data.count,
+        totalPage: Math.ceil(products.data!.data.count / pageItem.perPage),
       });
     }
   }, [products.isFetched]);
@@ -105,7 +105,7 @@ export const IndexPage = (): JSX.Element => {
         >
           <tbody className="bg-white">
             {products.isFetched &&
-              products.data.data.data.map((product: Product, index: number) => (
+              products.data!.data.data.map((product: Product, index: number) => (
                 <ProductRow key={index} product={product} />
               ))}
           </tbody>
