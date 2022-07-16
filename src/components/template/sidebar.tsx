@@ -11,7 +11,7 @@ type Item = {
 
 const NaviItems: Item[] = [
   {
-    link: '/dashbord',
+    link: '/',
     label: 'Dashbord',
     icon: (
       <svg
@@ -97,7 +97,7 @@ const NaviItems: Item[] = [
     ),
   },
   {
-    link: '/',
+    link: '/home',
     label: 'Home',
     icon: (
       <svg

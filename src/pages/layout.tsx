@@ -5,13 +5,13 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <nav className="flex-rows flex space-x-4 bg-red-500 p-2 font-bold text-white">
-        <Link href="/">
+        <Link href="/home">
           <a>Home</a>
         </Link>
         <Link href="/about">
           <a>About</a>
         </Link>
-        <Link href="/dashbord">
+        <Link href="/">
           <a>Dashbord</a>
         </Link>
       </nav>

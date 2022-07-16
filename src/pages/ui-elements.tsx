@@ -1,13 +1,14 @@
-import { ReactElement } from 'react'
-import { toast } from 'react-toastify'
-import useConfirm from '../hooks/useConfirm'
-import { Typography, Link } from '../components/atoms'
-import { DashboardLayout } from '../components/template'
+import { ReactElement } from 'react';
+import { toast } from 'react-toastify';
 
-const captains = console
+import { Link, Typography } from '../components/atoms';
+import { DashboardLayout } from '../components/template';
+import useConfirm from '../hooks/useConfirm';
+
+const captains = console;
 
 export const InfoDilalog: React.FC = () => {
-  const confirm = useConfirm()
+  const confirm = useConfirm();
 
   const handleClick = (_: any): void => {
     confirm({
@@ -18,22 +19,22 @@ export const InfoDilalog: React.FC = () => {
         'Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.',
     })
       .then(() => {
-        captains.log('then')
+        captains.log('then');
       })
       .catch(() => {
-        captains.log('error')
-      })
-  }
+        captains.log('error');
+      });
+  };
 
   return (
     <div className="mt-2">
       <Link onClick={handleClick}>open info dialog?</Link>
     </div>
-  )
-}
+  );
+};
 
 export const AlertDilalog: React.FC = () => {
-  const confirm = useConfirm()
+  const confirm = useConfirm();
 
   const handleClick = (_: any): void => {
     confirm({
@@ -44,22 +45,22 @@ export const AlertDilalog: React.FC = () => {
         'Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.',
     })
       .then(() => {
-        captains.log('then')
+        captains.log('then');
       })
       .catch(() => {
-        captains.log('error')
-      })
-  }
+        captains.log('error');
+      });
+  };
 
   return (
     <div className="mt-2">
       <Link onClick={handleClick}>open alert dialog?</Link>
     </div>
-  )
-}
+  );
+};
 
 export const HtlmDilalog: React.FC = () => {
-  const confirm = useConfirm()
+  const confirm = useConfirm();
 
   const handleClick = (_: any): void => {
     confirm({
@@ -69,22 +70,22 @@ export const HtlmDilalog: React.FC = () => {
       description: <div className="text-2xl">hoge?</div>,
     })
       .then(() => {
-        captains.log('then')
+        captains.log('then');
       })
       .catch(() => {
-        captains.log('error')
-      })
-  }
+        captains.log('error');
+      });
+  };
 
   return (
     <div className="mt-2">
       <Link onClick={handleClick}>open inline html dialog?</Link>
     </div>
-  )
-}
+  );
+};
 
 export const DilalogWithNoAlert: React.FC = () => {
-  const confirm = useConfirm()
+  const confirm = useConfirm();
 
   const handleClick = (_: any): void => {
     confirm({
@@ -94,77 +95,77 @@ export const DilalogWithNoAlert: React.FC = () => {
         'Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.',
     })
       .then(() => {
-        captains.log('then')
+        captains.log('then');
       })
       .catch(() => {
-        captains.log('error')
-      })
-  }
+        captains.log('error');
+      });
+  };
 
   return (
     <div className="mt-2">
       <Link onClick={handleClick}>open dialog with no icon?</Link>
     </div>
-  )
-}
+  );
+};
 
 export const Toast: React.FC = () => {
-  const notify = () => toast.success('Wow so easy!')
+  const notify = () => toast.success('Wow so easy!');
 
   return (
     <div className="mt-2">
       <Link onClick={notify}>Success!</Link>
     </div>
-  )
-}
+  );
+};
 
 export const ErrorToast: React.FC = () => {
-  const notify = () => toast.error('Wow so easy!')
+  const notify = () => toast.error('Wow so easy!');
 
   return (
     <div className="mt-2">
       <Link onClick={notify}>Error!</Link>
     </div>
-  )
-}
+  );
+};
 
 export default function Demo(): JSX.Element {
   return (
     <div className="container mx-auto px-6 py-8">
-      <div className="mb-12 prose lg:prose">
+      <div className="prose lg:prose mb-12">
         <h1>@tailwindcss/form demo</h1>
       </div>
       <form className="mt-4" action="/" method="GET">
         <label className="block">
-          <span className="text-gray-700 text-sm">Email</span>
+          <span className="text-sm text-gray-700">Email</span>
           <input
             type="email"
-            className="mt-1 border-gray-300 block w-full rounded-md focus:border-indigo-600"
+            className="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600"
           />
         </label>
 
-        <label className="block mt-3">
-          <span className="text-gray-700 text-sm">Password</span>
+        <label className="mt-3 block">
+          <span className="text-sm text-gray-700">Password</span>
           <input
             type="password"
-            className="mt-1 border-gray-300 block w-full rounded-md focus:border-indigo-600"
+            className="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600"
           />
         </label>
 
-        <div className="flex justify-between items-center mt-4">
+        <div className="mt-4 flex items-center justify-between">
           <div>
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 className="form-checkbox text-indigo-600"
               />
-              <span className="mx-2 text-gray-600 text-sm">Remember me</span>
+              <span className="mx-2 text-sm text-gray-600">Remember me</span>
             </label>
           </div>
 
           <div>
             <a
-              className="block text-sm fontme text-indigo-700 hover:underline"
+              className="fontme block text-sm text-indigo-700 hover:underline"
               href="#"
             >
               Forgot your password?
@@ -173,12 +174,12 @@ export default function Demo(): JSX.Element {
         </div>
 
         <div className="mt-6">
-          <button className="py-2 px-4 text-center bg-indigo-600 rounded-md w-full text-white text-sm hover:bg-indigo-500">
+          <button className="w-full rounded-md bg-indigo-600 py-2 px-4 text-center text-sm text-white hover:bg-indigo-500">
             Sign in
           </button>
         </div>
       </form>
-      <div className="mt-12 mb-12 prose lg:prose">
+      <div className="prose lg:prose my-12">
         <h1>Typography demo</h1>
       </div>
       <div>
@@ -206,7 +207,7 @@ export default function Demo(): JSX.Element {
           to a series of rabies cases springing up around the country.
         </Typography>
       </div>
-      <div className="mt-12 mb-12 prose lg:prose">
+      <div className="prose lg:prose my-12">
         <h1>@tailwindcss/line-clamp Plugin demo</h1>
       </div>
       <div style={{ width: '400px' }}>
@@ -218,7 +219,7 @@ export default function Demo(): JSX.Element {
           molestiae fugit.
         </p>
       </div>
-      <div className="mt-12 mb-12 prose lg:prose">
+      <div className="prose lg:prose my-12">
         <h1>Dialog demo</h1>
       </div>
       <div className="ml-4 mb-4">
@@ -233,7 +234,7 @@ export default function Demo(): JSX.Element {
       <div className="ml-4 mb-4">
         <DilalogWithNoAlert />
       </div>
-      <div className="mt-12 mb-12 prose lg:prose">
+      <div className="prose lg:prose my-12">
         <h1>Toast demo</h1>
       </div>
       <div className="ml-4 mb-4">
@@ -243,9 +244,9 @@ export default function Demo(): JSX.Element {
         <ErrorToast />
       </div>
     </div>
-  )
+  );
 }
 
 Demo.getLayout = function getLayout(page: ReactElement) {
-  return <DashboardLayout title={'デモ'}>{page}</DashboardLayout>
-}
+  return <DashboardLayout title={'デモ'}>{page}</DashboardLayout>;
+};
