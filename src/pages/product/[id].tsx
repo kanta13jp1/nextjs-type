@@ -1,38 +1,35 @@
-import _ from 'lodash'
-import { ReactElement } from 'react'
-import { useRouter } from 'next/router'
-import { GetServerSideProps } from 'next'
-import { toast } from 'react-toastify'
-import { useForm } from 'react-hook-form'
-import { useMutation } from 'react-query'
-import { AxiosPromise } from 'axios'
-import { ProductRepository } from '../../repository/product-repository'
-import { DashboardLayout } from '../../components/template'
-import { Product } from '../../lib/data/product'
-import data from '../../lib/shared/product-data'
+import { AxiosPromise } from 'axios';
+import _ from 'lodash';
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
+import { useForm } from 'react-hook-form';
+import { useMutation } from 'react-query';
+import { toast } from 'react-toastify';
+
 import {
-  FormLabel,
-  FormErrorMessage,
   Button,
-  Typography,
+  FormErrorMessage,
+  FormLabel,
   InputLabel,
-} from '../../components/atoms'
-import Progress from '../../components/progress'
-import { TextFieldType } from '../../data'
+  Typography,
+} from '../../components/atoms';
+import Progress from '../../components/progress';
+import { DashboardLayout } from '../../components/template';
+import { TextFieldType } from '../../data';
+import { checkSession } from '../../filters/checkSession';
+import { Product } from '../../lib/data/product';
+import data from '../../lib/shared/product-data';
 import {
-  ProductUpdateRequest,
   BaseResponse,
-} from '../../repository/product-repository'
-import { checkSession } from '../../filters/checkSession'
+  ProductRepository,
+  ProductUpdateRequest,
+} from '../../repository/product-repository';
 
-const captains = console
+const captains = console;
 
-export default function ProductDetail({
-  product,
-}: {
-  product: Product
-}): JSX.Element {
-  const router = useRouter()
+export default function ProductDetail({ product }: { product: Product }): JSX.Element {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -44,27 +41,26 @@ export default function ProductDetail({
       description: product.description,
       quantity: product.quantity,
     },
-  })
+  });
   const mutation = useMutation(
-    (req: ProductUpdateRequest): AxiosPromise<BaseResponse> =>
-      ProductRepository.update(req)
-  )
+    (req: ProductUpdateRequest): AxiosPromise<BaseResponse> => ProductRepository.update(req),
+  );
 
   const doSubmit = (data: Product): void => {
-    captains.log(data)
-    const request: ProductUpdateRequest = { ...data }
+    captains.log(data);
+    const request: ProductUpdateRequest = { ...data };
     mutation.mutate(request, {
       onSuccess: async () => {
-        await router.push(`/complete?to=/`)
-        setTimeout(() => toast.success('商品を更新しました'), 100) // display toast after screen transition
+        await router.push(`/complete?to=/`);
+        setTimeout(() => toast.success('商品を更新しました'), 100); // display toast after screen transition
       },
-    })
-  }
+    });
+  };
 
   const back = (event: any): void => {
-    router.back()
-    event.preventDefault()
-  }
+    router.back();
+    event.preventDefault();
+  };
 
   return (
     <>
@@ -78,12 +74,12 @@ export default function ProductDetail({
             <InputLabel fullWidth={true} value={product.id} />
           </label>
 
-          <label className="block mt-3">
+          <label className="mt-3 block">
             <FormLabel>Name</FormLabel>
             <input
               id="name"
               type={TextFieldType.Text}
-              className={`mt-1 w-full border-gray-300 block rounded-md focus:border-indigo-600 ${
+              className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
                 errors.name ? 'border-red-400' : ''
               }`}
               {...register('name')}
@@ -91,12 +87,12 @@ export default function ProductDetail({
             <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
           </label>
 
-          <label className="block mt-3">
+          <label className="mt-3 block">
             <FormLabel>Description</FormLabel>
             <input
               id="description"
               type={TextFieldType.Text}
-              className={`mt-1 w-full border-gray-300 block rounded-md focus:border-indigo-600 ${
+              className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
                 errors.description ? 'border-red-400' : ''
               }`}
               {...register('description')}
@@ -104,12 +100,12 @@ export default function ProductDetail({
             <FormErrorMessage>{errors.description?.message}</FormErrorMessage>
           </label>
 
-          <label className="block mt-3">
+          <label className="mt-3 block">
             <FormLabel>Quantity</FormLabel>
             <input
               id="quantity"
               type={TextFieldType.Number}
-              className={`mt-1 w-full border-gray-300 block rounded-md focus:border-indigo-600 ${
+              className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
                 errors.quantity ? 'border-red-400' : ''
               }`}
               {...register('quantity')}
@@ -128,32 +124,28 @@ export default function ProductDetail({
         </form>
       </div>
     </>
-  )
+  );
 }
 
 ProductDetail.getLayout = function getLayout(page: ReactElement) {
-  return <DashboardLayout title={'商品詳細'}>{page}</DashboardLayout>
-}
+  return <DashboardLayout title={'商品詳細'}>{page}</DashboardLayout>;
+};
 
-export const getServerSideProps: GetServerSideProps = checkSession(
-  async ({ params }) => {
-    const product = _.head(
-      data.getProducts().filter((row: Product) => row.id === Number(params.id))
-    )
-    captains.log(`target product id = ${product.id}`)
-    if (product) {
-      return {
-        props: {
-          product,
-        },
-      }
-    } else {
-      return {
-        redirect: {
-          permanent: false, // 永続的なリダイレクトかどうか
-          destination: '/404', // リダイレクト先
-        },
-      }
-    }
+export const getServerSideProps: GetServerSideProps = checkSession(async ({ params }) => {
+  const product = _.head(data.getProducts().filter((row: Product) => row.id === Number(params.id)));
+  captains.log(`target product id = ${product.id}`);
+  if (product) {
+    return {
+      props: {
+        product,
+      },
+    };
+  } else {
+    return {
+      redirect: {
+        permanent: false, // 永続的なリダイレクトかどうか
+        destination: '/404', // リダイレクト先
+      },
+    };
   }
-)
+});
