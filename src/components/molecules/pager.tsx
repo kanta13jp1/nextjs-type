@@ -21,7 +21,7 @@ const PageLink = ({
   return (
     <a
       href="#"
-      onClick={() => active && handleClick(page)}
+      onClick={() => handleClick}
       className={`page-link- relative inline-flex items-center border px-4 py-2 text-sm font-medium${page} ${
         active
           ? 'border-gray-300 bg-white text-gray-500 hover:bg-gray-50'
@@ -45,7 +45,7 @@ const NaviLink = ({
   return (
     <a
       href="#"
-      onClick={handleClick}
+      onClick={() => handleClick}
       className={`relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 ${
         active ? 'hover:bg-gray-50' : 'cursor-not-allowed'
       }`}
@@ -81,16 +81,10 @@ export const Pager = ({
   return (
     <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
-        <NaviLink
-          active={isFirstActive}
-          handleClick={() => isFirstActive && search(pageItem.page - 1)}
-        >
+        <NaviLink active={isFirstActive} handleClick={() => search(pageItem.page - 1)}>
           Previous
         </NaviLink>
-        <NaviLink
-          active={isLastActive}
-          handleClick={() => isLastActive && search(pageItem.page + 1)}
-        >
+        <NaviLink active={isLastActive} handleClick={() => search(pageItem.page + 1)}>
           Next
         </NaviLink>
       </div>
@@ -113,10 +107,7 @@ export const Pager = ({
             className="relative z-0 inline-flex -space-x-px rounded-md shadow-sm"
             aria-label="Pagination"
           >
-            <NaviLink
-              active={isFirstActive}
-              handleClick={() => isFirstActive && search(pageItem.page - 1)}
-            >
+            <NaviLink active={isFirstActive} handleClick={() => search(pageItem.page - 1)}>
               <svg
                 className="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +122,7 @@ export const Pager = ({
                 />
               </svg>
             </NaviLink>
-            {1 <= pageItem.totalPage && (
+            {1 <= pageItem.totalPage! && (
               <PageLink page={1} handleClick={search} active={isFirstActive} />
             )}
             {0 < pages.length &&
@@ -139,16 +130,17 @@ export const Pager = ({
                 <React.Fragment key={index}>
                   {index === 0 && 2 < page && <OmitLink />}
                   <PageLink page={page} handleClick={search} active={pageItem.page !== page} />
-                  {index === pages.length - 1 && page < pageItem.totalPage - 1 && <OmitLink />}
+                  {index === pages.length - 1 && page < pageItem.totalPage! - 1 && <OmitLink />}
                 </React.Fragment>
               ))}
-            {2 <= pageItem.totalPage && (
-              <PageLink page={pageItem.totalPage} handleClick={search} active={isLastActive} />
+            {2 <= pageItem.totalPage! && (
+              <PageLink
+                page={pageItem.totalPage as number}
+                handleClick={search}
+                active={isLastActive}
+              />
             )}
-            <NaviLink
-              active={isLastActive}
-              handleClick={() => isLastActive && search(pageItem.page + 1)}
-            >
+            <NaviLink active={isLastActive} handleClick={() => search(pageItem.page + 1)}>
               <svg
                 className="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"

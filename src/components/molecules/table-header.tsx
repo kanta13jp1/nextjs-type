@@ -11,12 +11,7 @@ const Upicon = (): JSX.Element => (
     viewBox="0 0 24 24"
     stroke="currentColor"
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M5 15l7-7 7 7"
-    />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
   </svg>
 );
 
@@ -28,12 +23,7 @@ const Downicon = (): JSX.Element => (
     viewBox="0 0 24 24"
     stroke="currentColor"
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M19 9l-7 7-7-7"
-    />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
 );
 
@@ -43,10 +33,10 @@ export const TableHeader = ({
   setSortItem,
   search,
 }: {
-  headerItems: TableHeaderItem[]
-  sortItem: SortItem
-  setSortItem: Dispatch<SetStateAction<SortItem>>
-  search: (page: number, sortItem: SortItem) => Promise<void>
+  headerItems: TableHeaderItem[];
+  sortItem: SortItem;
+  setSortItem: Dispatch<SetStateAction<SortItem>>;
+  search: (page: number, sortItem: SortItem) => Promise<void>;
 }): JSX.Element => {
   const sort = async (item: SortItem): Promise<void> => {
     setSortItem(item);
@@ -64,23 +54,10 @@ export const TableHeader = ({
           className="border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
         >
           {item.sortable ? (
-            <a
-              href="#"
-              onClick={() =>
-                sort({
-                  key: item.key,
-                  order: sortItem.order === 'asc' ? 'desc' : 'asc',
-                })
-              }
-              className="flex justify-start"
-            >
+            <a href="#" onClick={() => sort} className="flex justify-start">
               <div>{item.label}</div>
               <div>
-                {sortItem.key === item.key && sortItem.order === 'asc' ? (
-                  <Upicon />
-                ) : (
-                  <Downicon />
-                )}
+                {sortItem.key === item.key && sortItem.order === 'asc' ? <Upicon /> : <Downicon />}
               </div>
             </a>
           ) : (
