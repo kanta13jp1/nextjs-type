@@ -48,6 +48,7 @@ const About: NextPage = () => {
         <br />
         <br />
         <h2 className="decoration-sky-500">Button Componet</h2>
+        {/* <!-- 作成したボタンコンポーネントを利用  --> */}
         <Button color={'primary'} fullWidth={false} disabled={false}>
           Button Componet
         </Button>

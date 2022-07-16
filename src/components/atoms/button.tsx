@@ -80,7 +80,8 @@ export const Button = ({
   ].join(' ');
 
   const handleSubmit = (event: any) => {
-    console.log(event);
+    console.log('Button::handleSubmit()');
+    console.log('disabled = ' + disabled);
     if (onClick && !disabled) {
       onClick(event);
     }
@@ -89,7 +90,7 @@ export const Button = ({
   return (
     <button
       className={`${className} ${fullWidth ? 'w-full' : ''} ${
-        disabled ? 'opacity-50 cursor-not-allowed' : ''
+        disabled ? 'cursor-not-allowed opacity-50' : ''
       }`}
       onClick={handleSubmit}
     >
