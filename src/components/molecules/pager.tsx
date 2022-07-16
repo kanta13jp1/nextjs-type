@@ -72,8 +72,8 @@ export const Pager = ({
     setPages([]);
     const { page, totalPage } = pageItem;
     const from = 1 <= page - PAGER_BUFFER ? page - PAGER_BUFFER : 1;
-    const to = page + PAGER_BUFFER <= totalPage ? page + PAGER_BUFFER : totalPage;
-    for (let i = from; i <= to; i++) {
+    const to = page + PAGER_BUFFER <= (totalPage ?? []) ? page + PAGER_BUFFER : totalPage;
+    for (let i = from; i <= (to ?? []); i++) {
       setPages((prev) => [...prev, i].filter((page) => page !== 1 && page !== pageItem.totalPage)); //1ページ目と最終ページは除く
     }
   }, [pageItem.page, pageItem.totalPage]);

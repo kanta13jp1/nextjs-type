@@ -74,14 +74,12 @@ export const Button = ({
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-offset-2',
-    ..._color,
-    ..._size,
+    ...(_color ?? []),
+    ...(_size ?? []),
     ...classes,
   ].join(' ');
 
   const handleSubmit = (event: any) => {
-    console.log('Button::handleSubmit()');
-    console.log('disabled = ' + disabled);
     if (onClick && !disabled) {
       onClick(event);
     }

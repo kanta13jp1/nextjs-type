@@ -29,7 +29,7 @@ export const Typography = ({
   const _classes = _.head(
     VariantSetting.filter((map: Map) => map.key === variant).map((map: Map) => map.class),
   );
-  const className = [..._classes, ...classes].join(' ');
+  const className = [...(_classes ?? []), ...classes].join(' ');
 
   return (
     <div>
