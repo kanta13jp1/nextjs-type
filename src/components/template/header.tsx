@@ -1,50 +1,51 @@
-import { useContext } from 'react'
-import { toast } from 'react-toastify'
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/router'
-import { destroyCookie } from 'nookies'
-import { AxiosPromise } from 'axios'
-import { useMutation } from 'react-query'
-import GlobalContext from '../../context/global-context'
-import { BaseResponse, AuthRepository } from '../../repository/auth-repository'
+import { AxiosPromise } from 'axios';
+import { useRouter } from 'next/router';
+import { destroyCookie } from 'nookies';
+import { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { useMutation } from 'react-query';
+import { toast } from 'react-toastify';
+
+import GlobalContext from '../../context/global-context';
+import { BaseResponse, AuthRepository } from '../../repository/auth-repository';
 
 type FormValues = {
   keyword: string
 }
 
 export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
-  const router = useRouter()
-  const context = useContext(GlobalContext)
+  const router = useRouter();
+  const context = useContext(GlobalContext);
 
   const mutation = useMutation(
     (): AxiosPromise<BaseResponse> => AuthRepository.signOut()
-  )
+  );
 
   const { register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       keyword: router.query.keyword as string,
     },
-  })
+  });
 
   const doSubmit = async (data: FormValues): Promise<void> => {
     await router.push({
       query: { keyword: data.keyword },
-    })
-  }
+    });
+  };
 
   const signOut = (): void => {
     mutation.mutate(null, {
       onSuccess: async () => {
-        context.clearState()
-        await router.push('/login')
-        destroyCookie(null, 'state')
-        setTimeout(() => toast.dark('ログアウトしました'), 100) // display toast after screen transition
+        context.clearState();
+        await router.push('/login');
+        destroyCookie(null, 'state');
+        setTimeout(() => toast.dark('ログアウトしました'), 100); // display toast after screen transition
       },
-    })
-  }
+    });
+  };
 
   return (
-    <header className="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
+    <header className="flex items-center justify-between border-b-4 border-indigo-600 bg-white py-4 px-6">
       <div className="flex items-center">
         <button
           onClick={toggle}
@@ -69,7 +70,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
           <form onSubmit={handleSubmit(doSubmit)}>
             <button
               onClick={handleSubmit(doSubmit)}
-              className="absolute inset-y-0 left-0 pl-3 flex items-center"
+              className="absolute inset-y-0 left-0 flex items-center pl-3"
             >
               <svg
                 className="h-5 w-5 text-gray-500"
@@ -86,7 +87,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
               </svg>
             </button>
             <input
-              className="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
+              className="form-input w-32 rounded-md pl-10 pr-4 focus:border-indigo-600 sm:w-64"
               type="text"
               placeholder="Search"
               {...register('keyword')}
@@ -98,7 +99,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
         <div className="relative">
           <button
             onClick={signOut}
-            className=" block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none"
+            className=" block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +119,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

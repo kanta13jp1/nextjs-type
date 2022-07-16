@@ -1,3 +1,3 @@
-import { TextFieldType } from './text-field-type'
+import { TextFieldType } from './text-field-type';
 
-export { TextFieldType }
+export { TextFieldType };

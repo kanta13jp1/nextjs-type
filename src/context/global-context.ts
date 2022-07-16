@@ -1,5 +1,6 @@
-import { createContext } from 'react'
-import { GlobalState } from '../data/global-state'
+import { createContext } from 'react';
+
+import { GlobalState } from '../data/global-state';
 
 export default createContext(
   {} as {
@@ -9,4 +10,4 @@ export default createContext(
     clearState: () => void
     isSignin: () => boolean
   }
-)
+);

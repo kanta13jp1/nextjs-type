@@ -7,7 +7,7 @@ export const Progress = ({
     <>
       {!!processing && (
         <>
-          <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+          <div className="fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gray-700 opacity-75">
             <svg
               width="38"
               height="38"
@@ -31,14 +31,14 @@ export const Progress = ({
                 </g>
               </g>
             </svg>
-            <h2 className="mt-2 text-center text-white text-base">
+            <h2 className="mt-2 text-center text-base text-white">
               Loading...
             </h2>
           </div>
         </>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Progress
+export default Progress;

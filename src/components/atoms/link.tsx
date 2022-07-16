@@ -9,19 +9,19 @@ export const Link = ({
 }): JSX.Element => {
   const handleClick = (event: any): void => {
     if (onClick) {
-      onClick(event)
+      onClick(event);
     }
-  }
+  };
 
   return (
     <a
-      className="block text-sm fontme text-indigo-700 hover:underline"
+      className="fontme block text-sm text-indigo-700 hover:underline"
       href={href}
       onClick={handleClick}
     >
       {children}
     </a>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

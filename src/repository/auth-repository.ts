@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios'
+import axios, { AxiosPromise } from 'axios';
 
 export type AuthRequest = {
   id: string
@@ -28,11 +28,11 @@ export type AuthResponse = {
 
 class AuthRepository {
   public static signIn(req: AuthRequest): AxiosPromise<AuthResponse> {
-    return axios.put(`/api/auth`, req)
+    return axios.put(`/api/auth`, req);
   }
 
   public static signOut(): AxiosPromise<BaseResponse> {
-    return axios.put(`/api/auth/signout`, {})
+    return axios.put(`/api/auth/signout`, {});
   }
 
   public static checkSession(
@@ -40,19 +40,19 @@ class AuthRepository {
   ): AxiosPromise<AuthResponse> {
     const config = {
       headers: { Authorization: `Bearer ${req.jwt}` },
-    }
-    return axios.post(`/api/auth/check`, {}, config)
+    };
+    return axios.post(`/api/auth/check`, {}, config);
   }
 
   public static changePassword(
     req: ChangePasswordRequest
   ): AxiosPromise<BaseResponse> {
-    return axios.put(`/api/password/change`, req)
+    return axios.put(`/api/password/change`, req);
   }
 
   public static verifyCode(req: VerifyCodeRequest): AxiosPromise<BaseResponse> {
-    return axios.put(`/api/code/verify`, req)
+    return axios.put(`/api/code/verify`, req);
   }
 }
 
-export { AuthRepository }
+export { AuthRepository };

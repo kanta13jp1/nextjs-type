@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
-export const SECRET_KEY = 'secret'
+export const SECRET_KEY = 'secret';
 
 class TokenHelper {
   // eslint-disable-next-line
@@ -11,20 +11,20 @@ class TokenHelper {
         payload,
       },
       SECRET_KEY
-    )
+    );
   }
 
   public static verify(token: string): string | void {
     const newToken = jwt.verify(token, SECRET_KEY, (err: any, decoded: any) => {
       if (err) {
-        throw err
+        throw err;
       } else {
-        const token = this.sign(decoded.user)
-        return token
+        const token = this.sign(decoded.user);
+        return token;
       }
-    })
-    return newToken
+    });
+    return newToken;
   }
 }
 
-export default TokenHelper
+export default TokenHelper;

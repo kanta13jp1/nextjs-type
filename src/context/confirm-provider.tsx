@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react'
-import { DialogOptions } from '../data/dialog-options'
-import ConfirmContext from './confirm-context'
-import Confirm from '../components/template/confirm'
+import React, { useState, useCallback } from 'react';
+
+import Confirm from '../components/template/confirm';
+import { DialogOptions } from '../data/dialog-options';
+import ConfirmContext from './confirm-context';
 
 const DEFAULT_OPTIONS: DialogOptions = {
   html: false,
@@ -10,44 +11,44 @@ const DEFAULT_OPTIONS: DialogOptions = {
   description: '',
   confirmationText: 'Ok',
   cancellationText: 'Cancel',
-}
+};
 
 const buildOptions = (options: DialogOptions): DialogOptions => {
   return {
     ...DEFAULT_OPTIONS,
     ...options,
-  }
-}
+  };
+};
 
 export const ConfirmProvider = ({
   children,
 }: {
   children: React.ReactNode
 }): JSX.Element => {
-  const [options, setOptions] = useState<DialogOptions>({ ...DEFAULT_OPTIONS })
-  const [resolveReject, setResolveReject] = useState([])
-  const [resolve, reject] = resolveReject
+  const [options, setOptions] = useState<DialogOptions>({ ...DEFAULT_OPTIONS });
+  const [resolveReject, setResolveReject] = useState([]);
+  const [resolve, reject] = resolveReject;
 
   const confirm = useCallback((options: DialogOptions): Promise<void> => {
     return new Promise((resolve, reject) => {
-      setOptions(buildOptions(options))
-      setResolveReject([resolve, reject])
-    })
-  }, [])
+      setOptions(buildOptions(options));
+      setResolveReject([resolve, reject]);
+    });
+  }, []);
 
   const handleClose = useCallback(() => {
-    setResolveReject([])
-  }, [])
+    setResolveReject([]);
+  }, []);
 
   const handleCancel = useCallback(() => {
-    reject()
-    handleClose()
-  }, [reject, handleClose])
+    reject();
+    handleClose();
+  }, [reject, handleClose]);
 
   const handleConfirm = useCallback(() => {
-    resolve()
-    handleClose()
-  }, [resolve, handleClose])
+    resolve();
+    handleClose();
+  }, [resolve, handleClose]);
 
   return (
     <>
@@ -62,7 +63,7 @@ export const ConfirmProvider = ({
             {options.html ? (
               options.description
             ) : (
-              <p className="text-sm text-gray-500 px-5 py-1">
+              <p className="px-5 py-1 text-sm text-gray-500">
                 {options.description}
               </p>
             )}
@@ -73,7 +74,7 @@ export const ConfirmProvider = ({
         {children}
       </ConfirmContext.Provider>
     </>
-  )
-}
+  );
+};
 
-export default ConfirmProvider
+export default ConfirmProvider;

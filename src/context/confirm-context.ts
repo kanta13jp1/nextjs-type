@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+
 import { DialogOptions } from '../data/dialog-options';
 
 export default createContext(
