@@ -6,7 +6,7 @@ const useSafeState = (
 ): any[] => {
   const [state, changeState] = useState(defaultValue);
   const wrapChangeState = useCallback(
-    (value) => {
+    (value: any) => {
       if (!unmountRef.current) {
         changeState(value);
       }

@@ -1,88 +1,86 @@
-import React, { useEffect, useState } from 'react'
-import { PageItem } from '../../data/page-item'
-import Const from '../../const'
+import React, { useEffect, useState } from 'react';
+
+import Const from '../../const';
+import { PageItem } from '../../data/page-item';
 
 const OmitLink = (): JSX.Element => (
-  <span className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+  <span className="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700">
     ...
   </span>
-)
+);
 
 const PageLink = ({
   page,
   active,
   handleClick,
 }: {
-  page: number
-  active?: boolean
-  handleClick: (page: number) => Promise<void>
+  page: number;
+  active?: boolean;
+  handleClick: (page: number) => Promise<void>;
 }): JSX.Element => {
   return (
     <a
       href="#"
       onClick={() => active && handleClick(page)}
-      className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium page-link-${page} ${
+      className={`page-link- relative inline-flex items-center border px-4 py-2 text-sm font-medium${page} ${
         active
-          ? 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
-          : 'z-10 bg-indigo-50 border-indigo-500 text-indigo-600 cursor-not-allowed'
+          ? 'border-gray-300 bg-white text-gray-500 hover:bg-gray-50'
+          : 'z-10 cursor-not-allowed border-indigo-500 bg-indigo-50 text-indigo-600'
       }`}
     >
       {page}
     </a>
-  )
-}
+  );
+};
 
 const NaviLink = ({
   children,
   active,
   handleClick,
 }: {
-  children: React.ReactNode
-  active?: boolean
-  handleClick: () => Promise<void>
+  children: React.ReactNode;
+  active?: boolean;
+  handleClick: () => Promise<void>;
 }): JSX.Element => {
   return (
     <a
       href="#"
       onClick={handleClick}
-      className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white ${
+      className={`relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 ${
         active ? 'hover:bg-gray-50' : 'cursor-not-allowed'
       }`}
     >
       {children}
     </a>
-  )
-}
+  );
+};
 
-const PAGER_BUFFER = 3
+const PAGER_BUFFER = 3;
 
 export const Pager = ({
   pageItem,
   search,
 }: {
-  pageItem: PageItem
-  search: (page: number) => Promise<void>
+  pageItem: PageItem;
+  search: (page: number) => Promise<void>;
 }): JSX.Element => {
-  const isFirstActive = pageItem.page !== 1
-  const isLastActive = pageItem.page !== pageItem.totalPage
+  const isFirstActive = pageItem.page !== 1;
+  const isLastActive = pageItem.page !== pageItem.totalPage;
 
-  const [pages, setPages] = useState<number[]>([])
+  const [pages, setPages] = useState<number[]>([]);
   useEffect(() => {
-    setPages([])
-    const { page, totalPage } = pageItem
-    const from = 1 <= page - PAGER_BUFFER ? page - PAGER_BUFFER : 1
-    const to =
-      page + PAGER_BUFFER <= totalPage ? page + PAGER_BUFFER : totalPage
+    setPages([]);
+    const { page, totalPage } = pageItem;
+    const from = 1 <= page - PAGER_BUFFER ? page - PAGER_BUFFER : 1;
+    const to = page + PAGER_BUFFER <= totalPage ? page + PAGER_BUFFER : totalPage;
     for (let i = from; i <= to; i++) {
-      setPages((prev) =>
-        [...prev, i].filter((page) => page !== 1 && page !== pageItem.totalPage)
-      ) //1ページ目と最終ページは除く
+      setPages((prev) => [...prev, i].filter((page) => page !== 1 && page !== pageItem.totalPage)); //1ページ目と最終ページは除く
     }
-  }, [pageItem.page, pageItem.totalPage])
+  }, [pageItem.page, pageItem.totalPage]);
 
   return (
-    <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-      <div className="flex-1 flex justify-between sm:hidden">
+    <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+      <div className="flex flex-1 justify-between sm:hidden">
         <NaviLink
           active={isFirstActive}
           handleClick={() => isFirstActive && search(pageItem.page - 1)}
@@ -96,25 +94,23 @@ export const Pager = ({
           Next
         </NaviLink>
       </div>
-      <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+      <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-gray-700">
             <span>Showing</span>
-            <span className="font-medium mx-1">
+            <span className="mx-1 font-medium">
               {Const.defaultPageValue.perPage * (pageItem.page - 1) + 1}
             </span>
             <span>to</span>
-            <span className="font-medium mx-1">
-              {Const.defaultPageValue.perPage}
-            </span>
+            <span className="mx-1 font-medium">{Const.defaultPageValue.perPage}</span>
             <span>of</span>
-            <span className="font-medium mx-1">{pageItem.totalCount}</span>
+            <span className="mx-1 font-medium">{pageItem.totalCount}</span>
             <span>results</span>
           </p>
         </div>
         <div>
           <nav
-            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+            className="relative z-0 inline-flex -space-x-px rounded-md shadow-sm"
             aria-label="Pagination"
           >
             <NaviLink
@@ -142,21 +138,12 @@ export const Pager = ({
               pages.map((page, index: number) => (
                 <React.Fragment key={index}>
                   {index === 0 && 2 < page && <OmitLink />}
-                  <PageLink
-                    page={page}
-                    handleClick={search}
-                    active={pageItem.page !== page}
-                  />
-                  {index === pages.length - 1 &&
-                    page < pageItem.totalPage - 1 && <OmitLink />}
+                  <PageLink page={page} handleClick={search} active={pageItem.page !== page} />
+                  {index === pages.length - 1 && page < pageItem.totalPage - 1 && <OmitLink />}
                 </React.Fragment>
               ))}
             {2 <= pageItem.totalPage && (
-              <PageLink
-                page={pageItem.totalPage}
-                handleClick={search}
-                active={isLastActive}
-              />
+              <PageLink page={pageItem.totalPage} handleClick={search} active={isLastActive} />
             )}
             <NaviLink
               active={isLastActive}
@@ -180,7 +167,7 @@ export const Pager = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pager
+export default Pager;

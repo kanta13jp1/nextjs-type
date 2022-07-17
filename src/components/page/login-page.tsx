@@ -133,14 +133,18 @@ export const LoginPage = ({
         await router.push('/');
         setTimeout(() => toast('ログインしました'), 100); // display toast after screen transition
       },
-      onError: async (error: AxiosError) => {
-        if (error.response!.status === 401) {
-          confirm({
-            title: '認証エラー',
-            alert: true,
-            icon: 'warn',
-            description: 'Emailもしくはパスワードが誤っています',
-          });
+      onError: async (error: unknown) => {
+        if (error) {
+          if ((error as AxiosError).response) {
+            if ((error as AxiosError)!.response!.status === 401) {
+              confirm({
+                title: '認証エラー',
+                alert: true,
+                icon: 'warn',
+                description: 'Emailもしくはパスワードが誤っています',
+              });
+            }
+          }
         } else {
           confirm({
             title: 'システムエラー',

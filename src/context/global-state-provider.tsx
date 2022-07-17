@@ -15,8 +15,8 @@ const captains = console;
 const INIT_STATE = {
   session: {
     username: undefined,
-    sub: undefined,
-    jwtToken: undefined,
+    sub: '',
+    jwtToken: '',
     email_verified: false,
   },
 };

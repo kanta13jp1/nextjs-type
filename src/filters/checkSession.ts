@@ -18,7 +18,7 @@ export const checkSession =
   async (ctx: GetServerSidePropsContext<ParsedUrlQuery>) => {
     try {
       const cookie = ctx.req.cookies as SessionCookie;
-      const { session } = JSON.parse(cookie.state) as GlobalState;
+      const { session } = JSON.parse(cookie.state as string) as GlobalState;
       TokenHelper.verify(session.jwtToken);
       return f(ctx);
     } catch (e) {
