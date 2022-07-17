@@ -40,7 +40,7 @@ const NaviLink = ({
 }: {
   children: React.ReactNode;
   active?: boolean;
-  handleClick: () => Promise<void>;
+  handleClick: () => false | Promise<void>;
 }): JSX.Element => {
   return (
     <a
@@ -72,8 +72,8 @@ export const Pager = ({
     setPages([]);
     const { page, totalPage } = pageItem;
     const from = 1 <= page - PAGER_BUFFER ? page - PAGER_BUFFER : 1;
-    const to = page + PAGER_BUFFER <= totalPage ? page + PAGER_BUFFER : totalPage;
-    for (let i = from; i <= to; i++) {
+    const to = page + PAGER_BUFFER <= totalPage! ? page + PAGER_BUFFER : totalPage;
+    for (let i = from; i <= to!; i++) {
       setPages((prev) => [...prev, i].filter((page) => page !== 1 && page !== pageItem.totalPage)); //1ページ目と最終ページは除く
     }
   }, [pageItem.page, pageItem.totalPage]);
@@ -131,7 +131,7 @@ export const Pager = ({
                 />
               </svg>
             </NaviLink>
-            {1 <= pageItem.totalPage && (
+            {1 <= pageItem.totalPage! && (
               <PageLink page={1} handleClick={search} active={isFirstActive} />
             )}
             {0 < pages.length &&
@@ -139,11 +139,15 @@ export const Pager = ({
                 <React.Fragment key={index}>
                   {index === 0 && 2 < page && <OmitLink />}
                   <PageLink page={page} handleClick={search} active={pageItem.page !== page} />
-                  {index === pages.length - 1 && page < pageItem.totalPage - 1 && <OmitLink />}
+                  {index === pages.length - 1 && page < pageItem.totalPage! - 1 && <OmitLink />}
                 </React.Fragment>
               ))}
-            {2 <= pageItem.totalPage && (
-              <PageLink page={pageItem.totalPage} handleClick={search} active={isLastActive} />
+            {2 <= pageItem.totalPage! && (
+              <PageLink
+                page={pageItem.totalPage as number}
+                handleClick={search}
+                active={isLastActive}
+              />
             )}
             <NaviLink
               active={isLastActive}
