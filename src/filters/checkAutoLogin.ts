@@ -4,9 +4,9 @@ import { GetServerSidePropsContext } from 'next';
 import { NextApiRequestCookies } from 'next/dist/server/api-utils';
 
 type SessionCookie = NextApiRequestCookies & {
-  state?: string
-  rememberMe?: string
-}
+  state?: string;
+  rememberMe?: string;
+};
 
 export const checkAutoLogin =
   (f: (ctx: GetServerSidePropsContext<ParsedUrlQuery>) => any): any =>

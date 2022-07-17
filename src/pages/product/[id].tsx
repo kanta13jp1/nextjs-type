@@ -57,7 +57,7 @@ export default function ProductDetail({ product }: { product: Product }): JSX.El
     });
   };
 
-  const back = (event: any): void => {
+  const back = (event: Event): void => {
     router.back();
     event.preventDefault();
   };
@@ -68,7 +68,12 @@ export default function ProductDetail({ product }: { product: Product }): JSX.El
       <div className="container mx-auto px-6 py-8">
         <Typography variant="h4">商品詳細</Typography>
 
-        <form className="mt-4" onSubmit={handleSubmit(doSubmit)}>
+        <form
+          className="mt-4"
+          onSubmit={() => {
+            handleSubmit(doSubmit);
+          }}
+        >
           <label className="block">
             <FormLabel>ID</FormLabel>
             <InputLabel fullWidth={true} value={product.id} />
@@ -132,8 +137,10 @@ ProductDetail.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getServerSideProps: GetServerSideProps = checkSession(async ({ params }) => {
-  const product = _.head(data.getProducts().filter((row: Product) => row.id === Number(params.id)));
-  captains.log(`target product id = ${product.id}`);
+  const product = _.head(
+    data.getProducts().filter((row: Product) => row.id === Number(params!.id)),
+  );
+  captains.log(`target product id = ${product!.id}`);
   if (product) {
     return {
       props: {

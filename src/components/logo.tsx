@@ -18,6 +18,6 @@ export const Logo = (): JSX.Element => (
       fill="white"
     />
   </svg>
-);
+)
 
-export default Logo;
+export default Logo

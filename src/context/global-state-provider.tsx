@@ -15,8 +15,8 @@ const captains = console;
 const INIT_STATE = {
   session: {
     username: undefined,
-    sub: '',
-    jwtToken: '',
+    sub: undefined,
+    jwtToken: undefined,
     email_verified: false,
   },
 };
@@ -33,7 +33,7 @@ const initState = (): GlobalState => {
   }
   return {
     ...state,
-  } as GlobalState;
+  };
 };
 
 const GlobalStateProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
@@ -70,7 +70,7 @@ const GlobalStateProvider = ({ children }: { children: React.ReactNode }): JSX.E
   };
 
   useEffect(() => {
-    function checkLogin() {
+    async function checkLogin() {
       if (state.session.jwtToken) {
         const req: CheckSessionRequest = {
           jwt: state.session.jwtToken,
@@ -89,14 +89,14 @@ const GlobalStateProvider = ({ children }: { children: React.ReactNode }): JSX.E
             setState((_: any) => ({
               ...INIT_STATE,
             }));
-            router.push('/login').catch(() => 'catch');
+            router.push('/login');
           },
         });
       } else {
         setState((_: any) => ({
           ...INIT_STATE,
         }));
-        router.push('/login').catch(() => 'catch');
+        router.push('/login');
       }
     }
 

@@ -3,12 +3,12 @@ const Const = {
   defaultPageValue: {
     page: 1,
     totalCount: 0,
-    perPage: 8,
+    perPage: 2,
   },
   sortDefaultValue: {
     key: '',
     order: '' as const,
   },
-};
+}
 
-export default Const;
+export default Const

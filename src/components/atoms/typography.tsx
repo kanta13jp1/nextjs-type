@@ -1,9 +1,9 @@
-import _ from 'lodash';
+import _ from 'lodash'
 
 type Map = {
-  key: string;
-  class: string[];
-};
+  key: string
+  class: string[]
+}
 
 const VariantSetting: Map[] = [
   { key: 'h2', class: ['text-gray-900', 'text-5xl', 'font-semibold'] },
@@ -15,27 +15,39 @@ const VariantSetting: Map[] = [
   { key: 'subtitle2', class: ['prose', 'prose-sm', 'font-semibold'] },
   { key: 'body1', class: ['prose'] },
   { key: 'body2', class: ['prose', 'prose-sm'] },
-];
+]
 
 export const Typography = ({
   children,
   variant = 'body1',
   classes = [],
 }: {
-  children: React.ReactNode;
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2';
-  classes?: string[];
+  children: React.ReactNode
+  variant?:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'body1'
+    | 'body2'
+  classes?: string[]
 }): JSX.Element => {
   const _classes = _.head(
-    VariantSetting.filter((map: Map) => map.key === variant).map((map: Map) => map.class),
-  );
-  const className = [...(_classes ?? []), ...classes].join(' ');
+    VariantSetting.filter((map: Map) => map.key === variant).map(
+      (map: Map) => map.class
+    )
+  )
+  const className = [..._classes, ...classes].join(' ')
 
   return (
     <div>
       <span className={className}>{children}</span>
     </div>
-  );
-};
+  )
+}
 
-export default Typography;
+export default Typography

@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import { ToastContainer } from 'react-toastify';
+import { useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import GlobalStateProvider from '../../context/global-state-provider'
+import ConfirmProvider from '../../context/confirm-provider'
+import Seo from './seo'
+import Header from './header'
+import SideBar from './sidebar'
 
-import ConfirmProvider from '../../context/confirm-provider';
-import GlobalStateProvider from '../../context/global-state-provider';
-import Header from './header';
-import Seo from './seo';
-import SideBar from './sidebar';
-
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 export const DashboardLayout = ({
   children,
@@ -18,7 +17,7 @@ export const DashboardLayout = ({
   children: React.ReactNode
   title: string
 }): JSX.Element => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <>
@@ -26,14 +25,14 @@ export const DashboardLayout = ({
         <ConfirmProvider>
           <GlobalStateProvider>
             <Seo title={title} />
-            <div className="font-roboto flex h-screen bg-gray-200">
+            <div className="flex h-screen bg-gray-200 font-roboto">
               <SideBar
                 sidebarOpen={sidebarOpen}
                 toggle={() => setSidebarOpen(false)}
               />
-              <div className="flex flex-1 flex-col overflow-hidden">
+              <div className="flex-1 flex flex-col overflow-hidden">
                 <Header toggle={() => setSidebarOpen(true)} />
-                <main className="flex-1 overflow-y-auto overflow-x-hidden bg-gray-200">
+                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                   {children}
                 </main>
               </div>
@@ -56,7 +55,7 @@ export const DashboardLayout = ({
         pauseOnHover
       />
     </>
-  );
-};
+  )
+}
 
-export default DashboardLayout;
+export default DashboardLayout

@@ -72,10 +72,7 @@ export const LoginPage = ({
     if (decodedToken) {
       const exp = new Date((decodedToken?.payload.exp as number) * 1000);
       if (rememberMe && isAfter(exp, new Date())) {
-        router
-          .push('/')
-          .then(() => setTimeout(() => toast('自動ログインしました'), 100))
-          .catch(() => 'catch');
+        router.push('/').then(() => setTimeout(() => toast('自動ログインしました'), 100));
       } else {
         context.clearState();
       }
@@ -136,25 +133,21 @@ export const LoginPage = ({
         await router.push('/');
         setTimeout(() => toast('ログインしました'), 100); // display toast after screen transition
       },
-      onError: async (error: unknown) => {
-        if (error) {
-          if ((error as AxiosError).response) {
-            if ((error as AxiosError)!.response!.status === 401) {
-              await confirm({
-                title: '認証エラー',
-                alert: true,
-                icon: 'warn',
-                description: 'Emailもしくはパスワードが誤っています',
-              });
-            } else {
-              await confirm({
-                title: 'システムエラー',
-                alert: true,
-                icon: 'alert',
-                description: 'エラーが発生しました。しばらくしてからもう一度お試しください。',
-              });
-            }
-          }
+      onError: async (error: AxiosError) => {
+        if (error.response!.status === 401) {
+          confirm({
+            title: '認証エラー',
+            alert: true,
+            icon: 'warn',
+            description: 'Emailもしくはパスワードが誤っています',
+          });
+        } else {
+          confirm({
+            title: 'システムエラー',
+            alert: true,
+            icon: 'alert',
+            description: 'エラーが発生しました。しばらくしてからもう一度お試しください。',
+          });
         }
       },
     });

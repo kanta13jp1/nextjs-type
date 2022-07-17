@@ -9,7 +9,7 @@ export const DashboardCard = ({
 }): JSX.Element => {
   return (
     <>
-      <div className="flex items-center rounded-md bg-white px-5 py-6 shadow-sm">
+      <div className="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
         {children}
         <div className="mx-5">
           <h4 className="text-2xl font-semibold text-gray-700">
@@ -19,7 +19,7 @@ export const DashboardCard = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default DashboardCard;
+export default DashboardCard

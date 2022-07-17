@@ -1,4 +1,4 @@
-import { NextApiRequest } from 'next';
+import { NextApiRequest } from 'next'
 
 export type IdRequest = NextApiRequest & {
   query: {

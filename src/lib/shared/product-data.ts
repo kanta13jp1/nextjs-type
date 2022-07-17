@@ -1,5 +1,5 @@
-import { Product } from '../data/product';
-import { Products } from '../data/products';
+import { Product } from '../data/product'
+import { Products } from '../data/products'
 
 const data: Products = {
   products: [
@@ -100,33 +100,33 @@ const data: Products = {
       quantity: 16,
     },
   ],
-};
+}
 
 const getRandomInt = (): number => {
-  const max = 1000;
-  const min = 100;
-  return Math.floor(Math.random() * Math.floor(max) + min);
-};
+  const max = 1000
+  const min = 100
+  return Math.floor(Math.random() * Math.floor(max) + min)
+}
 
 const addProduct = (product: Product): Product => {
-  product.id = getRandomInt();
-  data.products.push(product);
-  return product;
-};
+  product.id = getRandomInt()
+  data.products.push(product)
+  return product
+}
 
 const updateProduct = (product: Product): Product => {
-  const index = data.products.findIndex((v) => v.id === product.id);
-  data.products.splice(index, 1, product);
-  return product;
-};
+  const index = data.products.findIndex((v) => v.id === product.id)
+  data.products.splice(index, 1, product)
+  return product
+}
 
 const deleteProduct = (id: number): boolean => {
-  data.products = data.products.filter((v) => v.id !== id);
-  return true;
-};
+  data.products = data.products.filter((v) => v.id !== id)
+  return true
+}
 
 const getProducts = (): Product[] => {
-  return data.products;
-};
+  return data.products
+}
 
-export default { addProduct, updateProduct, deleteProduct, getProducts };
+export default { addProduct, updateProduct, deleteProduct, getProducts }
