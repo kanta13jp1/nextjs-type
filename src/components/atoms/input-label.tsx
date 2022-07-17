@@ -11,7 +11,7 @@ export const InputLabel = ({
     <input
       disabled
       type="text"
-      className={`block rounded-md border-gray-300 bg-gray-100 bg-opacity-25 text-gray-500 ${classes.join(
+      className={`block rounded-md border-gray-300 bg-gray-100/25 text-gray-500 ${classes.join(
         ' ',
       )} ${fullWidth && 'w-full'}`}
       value={value}
