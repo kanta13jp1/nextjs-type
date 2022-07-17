@@ -9,16 +9,12 @@ export const ProductRow = ({ product }: { product: Product }): JSX.Element => {
     <tr>
       <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-4">
         <div className="flex items-center">
-          <div className="text-sm font-medium leading-5 text-gray-900">
-            {product.name}
-          </div>
+          <div className="text-sm font-medium leading-5 text-gray-900">{product.name}</div>
         </div>
       </td>
 
       <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-4">
-        <div className="text-sm leading-5 text-gray-500">
-          {product.description}
-        </div>
+        <div className="text-sm leading-5 text-gray-500">{product.description}</div>
       </td>
 
       <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-4 text-sm leading-5 text-gray-500">
@@ -34,7 +30,10 @@ export const ProductRow = ({ product }: { product: Product }): JSX.Element => {
       <td className="whitespace-no-wrap border-b border-gray-200 px-6 py-4 text-right text-sm font-medium leading-5">
         <a
           href="#"
-          onClick={() => router.push(`/product/${product.id}`)}
+          onClick={() => {
+            router.push(`/product/${product.id}`).catch(() => 'catch');
+            return;
+          }}
           className="text-indigo-600 hover:text-indigo-900"
         >
           Edit

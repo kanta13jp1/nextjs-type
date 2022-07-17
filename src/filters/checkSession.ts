@@ -10,15 +10,15 @@ import TokenHelper from '../helpers/token';
 const captains = console;
 
 type SessionCookie = NextApiRequestCookies & {
-  state?: string
-}
+  state?: string;
+};
 
 export const checkSession =
   (f: (ctx: GetServerSidePropsContext<ParsedUrlQuery>) => any): any =>
   async (ctx: GetServerSidePropsContext<ParsedUrlQuery>) => {
     try {
       const cookie = ctx.req.cookies as SessionCookie;
-      const { session } = JSON.parse(cookie.state) as GlobalState;
+      const { session } = JSON.parse(cookie.state as string) as GlobalState;
       TokenHelper.verify(session.jwtToken);
       return f(ctx);
     } catch (e) {

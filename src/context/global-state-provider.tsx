@@ -2,16 +2,12 @@ import { AxiosPromise, AxiosResponse } from 'axios';
 import _ from 'lodash';
 import { useRouter } from 'next/router';
 import { parseCookies, setCookie } from 'nookies';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 
 import Const from '../const';
 import { GlobalState } from '../data/global-state';
-import {
-  CheckSessionRequest,
-  AuthResponse,
-  AuthRepository,
-} from '../repository/auth-repository';
+import { AuthRepository, AuthResponse, CheckSessionRequest } from '../repository/auth-repository';
 import GlobalContext from './global-context';
 
 const captains = console;
@@ -19,8 +15,8 @@ const captains = console;
 const INIT_STATE = {
   session: {
     username: undefined,
-    sub: undefined,
-    jwtToken: undefined,
+    sub: '',
+    jwtToken: '',
     email_verified: false,
   },
 };
@@ -37,20 +33,15 @@ const initState = (): GlobalState => {
   }
   return {
     ...state,
-  };
+  } as GlobalState;
 };
 
-const GlobalStateProvider = ({
-  children,
-}: {
-  children: React.ReactNode
-}): JSX.Element => {
+const GlobalStateProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const router = useRouter();
   const [state, setState] = useState<GlobalState>(initState);
 
   const mutation = useMutation(
-    (req: CheckSessionRequest): AxiosPromise<AuthResponse> =>
-      AuthRepository.checkSession(req)
+    (req: CheckSessionRequest): AxiosPromise<AuthResponse> => AuthRepository.checkSession(req),
   );
 
   const clearState = (): void => {
@@ -79,7 +70,7 @@ const GlobalStateProvider = ({
   };
 
   useEffect(() => {
-    async function checkLogin() {
+    function checkLogin() {
       if (state.session.jwtToken) {
         const req: CheckSessionRequest = {
           jwt: state.session.jwtToken,
@@ -98,14 +89,14 @@ const GlobalStateProvider = ({
             setState((_: any) => ({
               ...INIT_STATE,
             }));
-            router.push('/login');
+            router.push('/login').catch(() => 'catch');
           },
         });
       } else {
         setState((_: any) => ({
           ...INIT_STATE,
         }));
-        router.push('/login');
+        router.push('/login').catch(() => 'catch');
       }
     }
 
@@ -120,9 +111,7 @@ const GlobalStateProvider = ({
     });
   }, [state]);
 
-  return (
-    <GlobalContext.Provider value={global}>{children}</GlobalContext.Provider>
-  );
+  return <GlobalContext.Provider value={global}>{children}</GlobalContext.Provider>;
 };
 
 export default GlobalStateProvider;
