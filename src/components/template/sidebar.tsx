@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import NaviItem from '../molecules/navi-item'
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
+import NaviItem from '../molecules/navi-item';
 
 type Item = {
-  label: string
-  link: string
-  icon: React.ReactNode
-}
+  label: string;
+  link: string;
+  icon: React.ReactNode;
+};
 
 const NaviItems: Item[] = [
   {
@@ -95,39 +96,37 @@ const NaviItems: Item[] = [
       </svg>
     ),
   },
-]
+];
 
 export const Slidebar = ({
   sidebarOpen,
   toggle,
 }: {
-  sidebarOpen: boolean
-  toggle: () => void
+  sidebarOpen: boolean;
+  toggle: () => void;
 }): JSX.Element => {
-  const router = useRouter()
-  const [active, setActive] = useState<boolean[]>(
-    Array(NaviItems.length).fill(false)
-  )
+  const router = useRouter();
+  const [active, setActive] = useState<boolean[]>(Array(NaviItems.length).fill(false));
 
   useEffect(() => {
-    const arr = NaviItems.map((item: Item) => item.link === router.pathname)
-    setActive(arr)
-  }, [router.pathname])
+    const arr = NaviItems.map((item: Item) => item.link === router.pathname);
+    setActive(arr);
+  }, [router.pathname]);
 
   return (
     <>
       <div
         onClick={toggle}
-        className={`fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden ${
+        className={`fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden ${
           sidebarOpen ? 'block' : 'hidden'
         }`}
       ></div>
       <div
-        className={`fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0 ${
+        className={`fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto bg-gray-900 transition duration-300 lg:static lg:inset-0 lg:translate-x-0${
           sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
         }`}
       >
-        <div className="flex items-center justify-center mt-8">
+        <div className="mt-8 flex items-center justify-center">
           <div className="flex items-center">
             <svg
               className="h-12 w-12"
@@ -148,9 +147,7 @@ export const Slidebar = ({
                 fill="white"
               />
             </svg>
-            <span className="text-white text-2xl mx-2 font-semibold">
-              Dashboard
-            </span>
+            <span className="mx-2 text-2xl font-semibold text-white">Dashboard</span>
           </div>
         </div>
 
@@ -169,7 +166,7 @@ export const Slidebar = ({
         </nav>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Slidebar
+export default Slidebar;

@@ -1,7 +1,7 @@
-import { NextApiRequest } from 'next'
+import { NextApiRequest } from 'next';
 
 export type IdRequest = NextApiRequest & {
   query: {
-    id: string | undefined
-  }
-}
+    id: string | undefined;
+  };
+};

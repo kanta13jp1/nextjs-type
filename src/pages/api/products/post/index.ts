@@ -1,19 +1,20 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { Product } from '../../../../lib/data/product'
-import data from '../../../../lib/shared/product-data'
+import { NextApiRequest, NextApiResponse } from 'next';
+
+import { Product } from '../../../../lib/data/product';
+import data from '../../../../lib/shared/product-data';
 
 export default (req: NextApiRequest, res: NextApiResponse): void => {
   const product: Product = {
-    id: undefined,
+    id: 0,
     name: req.body.name,
     description: req.body.description,
     quantity: req.body.quantity,
-  }
+  };
 
   try {
-    const newProduct = data.addProduct(product)
-    res.status(201).json(newProduct)
+    const newProduct = data.addProduct(product);
+    res.status(201).json(newProduct);
   } catch (error) {
-    res.status(500).send(error)
+    res.status(500).send(error);
   }
-}
+};
