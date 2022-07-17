@@ -9,6 +9,6 @@ const Const = {
     key: '',
     order: '' as const,
   },
-}
+};
 
-export default Const
+export default Const;

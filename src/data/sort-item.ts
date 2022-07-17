@@ -1,4 +1,4 @@
 export type SortItem = {
-  key: string
-  order: '' | 'asc' | 'desc'
-}
+  key: string;
+  order: '' | 'asc' | 'desc';
+};
