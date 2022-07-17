@@ -26,8 +26,8 @@ export const NaviItem = ({
       onClick={handleClick}
       className={`mt-4 flex items-center py-2 px-6 ${
         active
-          ? 'bg-gray-700 bg-opacity-25 text-gray-100'
-          : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100'
+          ? 'bg-gray-700/25 text-gray-100'
+          : 'text-gray-500 hover:bg-gray-700/25 hover:text-gray-100'
       }`}
     >
       {children}

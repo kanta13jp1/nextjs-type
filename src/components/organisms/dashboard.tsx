@@ -5,7 +5,7 @@ export const Dashboard = (): JSX.Element => {
     <div className="-mx-6 flex flex-wrap">
       <div className="w-full px-6 sm:w-1/2 xl:w-1/3">
         <DashboardCard count={8282} label="New Customer">
-          <div className="rounded-full bg-indigo-600 bg-opacity-75 p-3">
+          <div className="rounded-full bg-indigo-600/75 p-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -26,7 +26,7 @@ export const Dashboard = (): JSX.Element => {
 
       <div className="mt-6 w-full px-6 sm:mt-0 sm:w-1/2 xl:w-1/3">
         <DashboardCard count={200521} label="Total Orders">
-          <div className="rounded-full bg-purple-600 bg-opacity-75 p-3">
+          <div className="rounded-full bg-purple-600/75 p-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
@@ -53,7 +53,7 @@ export const Dashboard = (): JSX.Element => {
 
       <div className="mt-6 w-full px-6 sm:w-1/2 xl:mt-0 xl:w-1/3">
         <DashboardCard count={215542} label="Available Products">
-          <div className="rounded-full bg-pink-600 bg-opacity-75 p-3">
+          <div className="rounded-full bg-pink-600/75 p-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-white"
