@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import Confirm from '../components/template/confirm';
 import { DialogOptions } from '../data/dialog-options';
@@ -20,11 +20,7 @@ const buildOptions = (options: DialogOptions): DialogOptions => {
   };
 };
 
-export const ConfirmProvider = ({
-  children,
-}: {
-  children: React.ReactNode
-}): JSX.Element => {
+export const ConfirmProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const [options, setOptions] = useState<DialogOptions>({ ...DEFAULT_OPTIONS });
   const [resolveReject, setResolveReject] = useState([]);
   const [resolve, reject] = resolveReject;
@@ -32,7 +28,7 @@ export const ConfirmProvider = ({
   const confirm = useCallback((options: DialogOptions): Promise<void> => {
     return new Promise((resolve, reject) => {
       setOptions(buildOptions(options));
-      setResolveReject([resolve, reject]);
+      setResolveReject([resolve as never, reject as never]);
     });
   }, []);
 
@@ -41,12 +37,12 @@ export const ConfirmProvider = ({
   }, []);
 
   const handleCancel = useCallback(() => {
-    reject();
+    reject;
     handleClose();
   }, [reject, handleClose]);
 
   const handleConfirm = useCallback(() => {
-    resolve();
+    resolve;
     handleClose();
   }, [resolve, handleClose]);
 
@@ -63,16 +59,12 @@ export const ConfirmProvider = ({
             {options.html ? (
               options.description
             ) : (
-              <p className="px-5 py-1 text-sm text-gray-500">
-                {options.description}
-              </p>
+              <p className="px-5 py-1 text-sm text-gray-500">{options.description}</p>
             )}
           </Confirm>
         </>
       )}
-      <ConfirmContext.Provider value={{ confirm }}>
-        {children}
-      </ConfirmContext.Provider>
+      <ConfirmContext.Provider value={{ confirm }}>{children}</ConfirmContext.Provider>
     </>
   );
 };

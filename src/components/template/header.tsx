@@ -7,19 +7,17 @@ import { useMutation } from 'react-query';
 import { toast } from 'react-toastify';
 
 import GlobalContext from '../../context/global-context';
-import { BaseResponse, AuthRepository } from '../../repository/auth-repository';
+import { AuthRepository, BaseResponse } from '../../repository/auth-repository';
 
 type FormValues = {
-  keyword: string
-}
+  keyword: string;
+};
 
 export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
   const router = useRouter();
   const context = useContext(GlobalContext);
 
-  const mutation = useMutation(
-    (): AxiosPromise<BaseResponse> => AuthRepository.signOut()
-  );
+  const mutation = useMutation((): AxiosPromise<BaseResponse> => AuthRepository.signOut());
 
   const { register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
@@ -34,7 +32,8 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
   };
 
   const signOut = (): void => {
-    mutation.mutate(null, {
+    let variables: void;
+    mutation.mutate(variables, {
       onSuccess: async () => {
         context.clearState();
         await router.push('/login');
@@ -47,10 +46,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
   return (
     <header className="flex items-center justify-between border-b-4 border-indigo-600 bg-white py-4 px-6">
       <div className="flex items-center">
-        <button
-          onClick={toggle}
-          className="text-gray-500 focus:outline-none lg:hidden"
-        >
+        <button onClick={toggle} className="text-gray-500 focus:outline-none lg:hidden">
           <svg
             className="h-6 w-6"
             viewBox="0 0 24 24"
@@ -72,11 +68,7 @@ export const Header = ({ toggle }: { toggle: () => void }): JSX.Element => {
               onClick={handleSubmit(doSubmit)}
               className="absolute inset-y-0 left-0 flex items-center pl-3"
             >
-              <svg
-                className="h-5 w-5 text-gray-500"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg className="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
                   stroke="currentColor"
