@@ -11,6 +11,7 @@ export const InfoDilalog: React.FC = () => {
   const confirm = useConfirm();
 
   const handleClick = (_: any): void => {
+    captains.log('handleClick');
     confirm({
       title: 'Info Dialog Demo',
       alert: true,
@@ -155,19 +156,13 @@ export default function Demo(): JSX.Element {
         <div className="mt-4 flex items-center justify-between">
           <div>
             <label className="inline-flex items-center">
-              <input
-                type="checkbox"
-                className="form-checkbox text-indigo-600"
-              />
+              <input type="checkbox" className="form-checkbox text-indigo-600" />
               <span className="mx-2 text-sm text-gray-600">Remember me</span>
             </label>
           </div>
 
           <div>
-            <a
-              className="fontme block text-sm text-indigo-700 hover:underline"
-              href="#"
-            >
+            <a className="fontme block text-sm text-indigo-700 hover:underline" href="#">
               Forgot your password?
             </a>
           </div>
@@ -189,34 +184,37 @@ export default function Demo(): JSX.Element {
         <Typography variant={'h5'}>h5. Heading</Typography>
         <Typography variant={'h6'}>h6. Heading</Typography>
         <Typography variant={'subtitle1'}>
-          subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
+          subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+          tenetur
         </Typography>
         <Typography variant={'subtitle2'}>
-          subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
+          subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+          tenetur
         </Typography>
         <Typography>
-          For years parents have espoused the health benefits of eating garlic
-          bread with cheese to their children, with the food earning such an
-          iconic status in our culture that kids will often dress up as warm,
-          cheesy loaf for Halloween.
+          For years parents have espoused the health benefits of eating garlic bread with cheese to
+          their children, with the food earning such an iconic status in our culture that kids will
+          often dress up as warm, cheesy loaf for Halloween.
         </Typography>
         <Typography variant={'body2'}>
-          But a recent study shows that the celebrated appetizer may be linked
-          to a series of rabies cases springing up around the country.
+          But a recent study shows that the celebrated appetizer may be linked to a series of rabies
+          cases springing up around the country.
         </Typography>
       </div>
       <div className="prose lg:prose my-12">
         <h1>@tailwindcss/line-clamp Plugin demo</h1>
+        <div className="mx-20 my-10 h-24 line-clamp-3 rounded-lg border bg-blue-50 p-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti ipsam delectus
+          laudantium debitis doloribus hic ex repudiandae numquam nam quaerat consequuntur
+          voluptatum est, perspiciatis obcaecati dolores maiores minus optio.
+        </div>
       </div>
       <div style={{ width: '400px' }}>
         <p className="line-clamp-3">
-          Et molestiae hic earum repellat aliquid est doloribus delectus. Enim
-          illum odio porro ut omnis dolor debitis natus. Voluptas possimus
-          deserunt sit delectus est saepe nihil. Qui voluptate possimus et quia.
-          Eligendi voluptas voluptas dolor cum. Rerum est quos quos id ut
-          molestiae fugit.
+          Et molestiae hic earum repellat aliquid est doloribus delectus. Enim illum odio porro ut
+          omnis dolor debitis natus. Voluptas possimus deserunt sit delectus est saepe nihil. Qui
+          voluptate possimus et quia. Eligendi voluptas voluptas dolor cum. Rerum est quos quos id
+          ut molestiae fugit.
         </p>
       </div>
       <div className="prose lg:prose my-12">

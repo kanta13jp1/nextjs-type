@@ -103,7 +103,7 @@ export const Confirm = ({
 
   return (
     <div
-      className="modal-dialog fixed inset-0 z-10 overflow-y-auto"
+      className="modal-dialog fixed inset-0 z-0 overflow-y-auto"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -111,7 +111,7 @@ export const Confirm = ({
       <div className="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
         <div
           onClick={onClose}
-          className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          className="fixed inset-0 bg-gray-500/75 transition-opacity"
           aria-hidden="true"
         ></div>
         <span className="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
@@ -123,7 +123,7 @@ export const Confirm = ({
               <div>
                 <div className="sm:flex sm:items-start">
                   {icon && DialogIcon()}
-                  <div className="modal-title mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                     {title && <Typography variant={'h6'}>{title}</Typography>}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export const Confirm = ({
                 </svg>
               </Link>
             </div>
-            <div className="modal-message mt-2">
+            <div className="mt-2">
               <div>{children}</div>
             </div>
           </div>

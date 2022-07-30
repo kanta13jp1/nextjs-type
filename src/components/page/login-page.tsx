@@ -22,6 +22,9 @@ import { AuthRepository, AuthRequest, AuthResponse } from '../../repository/auth
 const captains = console;
 
 type FormValues = {
+  firstName: string;
+  lastName: string;
+  age: number;
   email: string;
   password: string;
   rememberMe: boolean;
@@ -53,6 +56,7 @@ export const LoginPage = ({
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
@@ -62,6 +66,8 @@ export const LoginPage = ({
       rememberMe: Boolean(parseCookies(null).rememberMe),
     },
   });
+
+  captains.log(watch());
 
   useEffect(() => {
     const rememberMe = Boolean(parseCookies(null).rememberMe);
@@ -116,6 +122,7 @@ export const LoginPage = ({
   };
 
   const doSubmit = (data: FormValues): void => {
+    captains.log('doSubmit()');
     captains.log(data);
     const authRequest: AuthRequest = {
       id: data.email,
@@ -174,6 +181,20 @@ export const LoginPage = ({
 
           <form className="mt-4" onSubmit={handleSubmit(doSubmit)}>
             <label className="block">
+              <FormLabel>FirstName</FormLabel>
+              <input
+                id="firstName"
+                type={TextFieldType.Text}
+                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600`}
+                {...register('firstName')}
+              />
+              <FormLabel>LastName</FormLabel>
+              <input
+                id="lastName"
+                type={TextFieldType.Text}
+                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600`}
+                {...register('lastName')}
+              />
               <FormLabel>Email</FormLabel>
               <input
                 id="email"
