@@ -3,7 +3,7 @@ const Const = {
   defaultPageValue: {
     page: 1,
     totalCount: 0,
-    perPage: 2,
+    perPage: 7,
   },
   sortDefaultValue: {
     key: '',

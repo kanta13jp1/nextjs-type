@@ -102,7 +102,9 @@ export const Pager = ({
               {Const.defaultPageValue.perPage * (pageItem.page - 1) + 1}
             </span>
             <span>to</span>
-            <span className="mx-1 font-medium">{Const.defaultPageValue.perPage}</span>
+            <span className="mx-1 font-medium">
+              {isLastActive ? Const.defaultPageValue.perPage * pageItem.page : pageItem.totalCount}
+            </span>
             <span>of</span>
             <span className="mx-1 font-medium">{pageItem.totalCount}</span>
             <span>results</span>
