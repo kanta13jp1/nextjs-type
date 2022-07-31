@@ -22,22 +22,22 @@ const Reounded: NextPage = () => {
           </button>
           <br />
           <br />
-          <button className="rounded p-6 bg-sky-300 text-white">
+          <button className="rounded p-6 bg-sky-300 focus:ring-2 text-white">
             rounded p-6 bg-sky-300 text-white
           </button>
           <br />
           <br />
-          <button className="rounded-md p-6 bg-sky-400 text-white">
+          <button className="rounded-md p-6 bg-sky-400 ring-offset-2 ring-4 text-white">
             rounded-md p-6 bg-sky-400 text-white
           </button>
           <br />
           <br />
-          <button className="rounded-lg p-6 bg-sky-500 text-white">
+          <button className="rounded-lg p-6 bg-sky-500 ring-offset-2 ring text-white">
             rounded-lg p-6 bg-sky-500 text-white
           </button>
           <br />
           <br />
-          <button className="rounded-xl p-6 bg-sky-600 text-white">
+          <button className="rounded-xl p-6 bg-sky-600 ring-offset-2 ring-2 text-white">
             rounded-xl p-6 bg-sky-600 text-white
           </button>
           <br />
