@@ -14,11 +14,7 @@ export const Link = ({
   };
 
   return (
-    <a
-      className="fontme block text-sm text-indigo-700 hover:underline"
-      href={href}
-      onClick={handleClick}
-    >
+    <a className="block text-sm text-indigo-700 hover:underline" href={href} onClick={handleClick}>
       {children}
     </a>
   );

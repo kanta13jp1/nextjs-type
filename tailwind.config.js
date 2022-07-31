@@ -12,6 +12,9 @@ module.exports = {
       // Serif 体がメインの場合は、 `...defaultTheme.fontFamily.serif` を展開する
       ja: [...defaultTheme.fontFamily.sans],
       en: [...defaultTheme.fontFamily.sans],
+      sans: [...defaultTheme.fontFamily.sans],
+      serif: [...defaultTheme.fontFamily.serif],
+      mono: [...defaultTheme.fontFamily.mono],
     },
     extend: {
       colors: {

@@ -42,18 +42,18 @@ const Reounded: NextPage = () => {
           </button>
           <br />
           <br />
-          <button className="rounded-2xl p-6 bg-sky-700 text-white">
-            rounded-2xl p-6 bg-sky-700 text-white
+          <button className="rounded-2xl p-6 bg-sky-700 border-4 border-red-700 text-white">
+            rounded-2xl p-6 bg-sky-700 border-4 border-red-700 text-white
           </button>
           <br />
           <br />
-          <button className="rounded-3xl p-6 bg-sky-800 text-white">
-            rounded-3xl p-6 bg-sky-800 text-white
+          <button className="rounded-3xl p-6 bg-sky-800 border-4 border-red-800 text-white">
+            rounded-3xl p-6 bg-sky-800 border-4 border-red-800 text-white
           </button>
           <br />
           <br />
-          <button className="rounded-full p-6 bg-sky-900 text-white">
-            rounded-full p-6 bg-sky-900 text-white
+          <button className="rounded-full p-6 bg-sky-900 border-4 border-red-900 text-white">
+            rounded-full p-6 bg-sky-900 border-4 border-red-900 text-white
           </button>
           <br />
           <br />
