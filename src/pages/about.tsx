@@ -49,11 +49,41 @@ const About: NextPage = () => {
           </button>
           <br />
           <br />
-          <h2 className="decoration-sky-500">Button Componet</h2>
+          <h2 className="decoration-sky-500">
+            Button Componet color=primary fullWidth=false disabled=false
+          </h2>
           {/* <!-- 作成したボタンコンポーネントを利用  --> */}
           <Button color={'primary'} fullWidth={false} disabled={false}>
+            Button Componet primary
+          </Button>
+          <br />
+          <br />
+          <h2 className="decoration-sky-500">
+            Button Componet color=secondary fullWidth=false disabled=false
+          </h2>
+          {/* <!-- 作成したボタンコンポーネントを利用  --> */}
+          <Button color={'secondary'} fullWidth={false} disabled={false}>
+            Button Componet secondary
+          </Button>
+          <br />
+          <br />
+          <h2 className="decoration-sky-500">
+            Button Componet color=danger fullWidth=false disabled=true
+          </h2>
+          {/* <!-- 作成したボタンコンポーネントを利用  --> */}
+          <Button color={'danger'} fullWidth={false} disabled={true}>
+            Button Componet danger
+          </Button>
+          <br />
+          <br />
+          <h2 className="decoration-sky-500">
+            Button Componet color=default fullWidth=true disabled=true{' '}
+          </h2>
+          {/* <!-- 作成したボタンコンポーネントを利用  --> */}
+          <Button color={'default'} fullWidth={true} disabled={true}>
             Button Componet
           </Button>
+
           <ul role="list" className="divide-y divide-slate-200 p-6">
             <li className="flex py-4 first:pt-0 last:pb-0">
               <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
@@ -84,6 +114,43 @@ const About: NextPage = () => {
               </div>
             </li>
           </ul>
+          <p className="text-right hover:text-left text-base">
+            text-right hover:text-left text-base
+          </p>
+          <p className="text-left hover:text-center text-lg">text-left hover:text-center text-lg</p>
+          <p className="text-center hover:text-right text-xl">
+            text-center hover:text-right text-xl
+          </p>
+          <ul role="list" className="divide-y divide-slate-200 p-6">
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-900 text-slate-100">
+              bg-gray-900 text-slate-100
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-800 text-slate-200">
+              bg-gray-800 text-slate-200
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-700 text-slate-300">
+              bg-gray-700 text-slate-300
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-600 text-slate-400">
+              bg-gray-600 text-slate-400
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-500 text-slate-500">
+              bg-gray-500 text-slate-500
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-400 text-slate-600">
+              bg-gray-400 text-slate-600
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-300 text-slate-700">
+              bg-gray-300 text-slate-700
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-200 text-slate-800">
+              bg-gray-200 text-slate-800
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-100 text-slate-900">
+              bg-gray-100 text-slate-900
+            </li>
+          </ul>
+
           <div>
             <Typography variant={'h2'}>h2. Heading</Typography>
             <Typography variant={'h3'}>h3. Heading</Typography>
