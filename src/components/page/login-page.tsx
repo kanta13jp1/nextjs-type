@@ -31,6 +31,9 @@ type FormValues = {
 };
 
 const schema = yup.object().shape({
+  firstName: yup.string().required('入力してください').max(4, '最大文字数を超えています'),
+  lastName: yup.string().required('入力してください').max(4, '最大文字数を超えています'),
+  age: yup.number().required('入力してください').max(4, '最大値を超えています'),
   email: yup.string().required('入力してください').email('メールアドレスを入力してください'),
   password: yup
     .string()
@@ -61,6 +64,7 @@ export const LoginPage = ({
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
     defaultValues: {
+      age: 0,
       // email: 'test@test.com',
       // password: 'Password1?',
       rememberMe: Boolean(parseCookies(null).rememberMe),
@@ -68,6 +72,7 @@ export const LoginPage = ({
   });
 
   captains.log(watch());
+  captains.log('errors', errors);
 
   useEffect(() => {
     const rememberMe = Boolean(parseCookies(null).rememberMe);
@@ -185,16 +190,38 @@ export const LoginPage = ({
               <input
                 id="firstName"
                 type={TextFieldType.Text}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600`}
+                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                  errors.firstName ? 'border-red-400' : ''
+                }`}
                 {...register('firstName')}
               />
+              <FormErrorMessage classes={['mt-1', 'firstName-error-message-area']}>
+                {errors.firstName?.message}
+              </FormErrorMessage>
               <FormLabel>LastName</FormLabel>
               <input
                 id="lastName"
                 type={TextFieldType.Text}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600`}
+                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                  errors.lastName ? 'border-red-400' : ''
+                }`}
                 {...register('lastName')}
               />
+              <FormErrorMessage classes={['mt-1', 'lastName-error-message-area']}>
+                {errors.lastName?.message}
+              </FormErrorMessage>
+              <FormLabel>Age</FormLabel>
+              <input
+                id="age"
+                type={TextFieldType.Text}
+                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                  errors.lastName ? 'border-red-400' : ''
+                }`}
+                {...register('age')}
+              />
+              <FormErrorMessage classes={['mt-1', 'age-error-message-area']}>
+                {errors.age?.message}
+              </FormErrorMessage>
               <FormLabel>Email</FormLabel>
               <input
                 id="email"
