@@ -64,9 +64,11 @@ export const LoginPage = ({
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
     defaultValues: {
+      firstName: '',
+      lastName: '',
       age: 0,
-      // email: 'test@test.com',
-      // password: 'Password1?',
+      email: '',
+      password: '',
       rememberMe: Boolean(parseCookies(null).rememberMe),
     },
   });
@@ -190,8 +192,8 @@ export const LoginPage = ({
               <input
                 id="firstName"
                 type={TextFieldType.Text}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
-                  errors.firstName ? 'border-red-400' : ''
+                className={`mt-1 block w-full rounded-md border-2 border-gray-300 focus:border-indigo-600 ${
+                  errors.firstName ? 'border-red-400 focus:border-red-400' : ''
                 }`}
                 {...register('firstName')}
               />
@@ -202,7 +204,7 @@ export const LoginPage = ({
               <input
                 id="lastName"
                 type={TextFieldType.Text}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                className={`mt-1 block w-full rounded-md border-2 border-gray-300 focus:border-indigo-600 ${
                   errors.lastName ? 'border-red-400' : ''
                 }`}
                 {...register('lastName')}
@@ -214,8 +216,8 @@ export const LoginPage = ({
               <input
                 id="age"
                 type={TextFieldType.Text}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
-                  errors.lastName ? 'border-red-400' : ''
+                className={`mt-1 block w-full rounded-md border-2 border-gray-300 focus:border-indigo-600 ${
+                  errors.age ? 'border-red-400' : ''
                 }`}
                 {...register('age')}
               />
@@ -226,7 +228,7 @@ export const LoginPage = ({
               <input
                 id="email"
                 type={TextFieldType.Email}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                className={`mt-1 block w-full rounded-md border-2 border-gray-300 focus:border-indigo-600 ${
                   errors.email ? 'border-red-400' : ''
                 }`}
                 {...register('email')}
@@ -241,7 +243,7 @@ export const LoginPage = ({
               <input
                 id="password"
                 type={TextFieldType.Password}
-                className={`mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-600 ${
+                className={`mt-1 block w-full rounded-md border-2 border-gray-300 focus:border-indigo-600 ${
                   errors.password ? 'border-red-400' : ''
                 }`}
                 {...register('password')}

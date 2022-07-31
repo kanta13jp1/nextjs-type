@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Button from '@/components/atoms/button';
 import Typography from '@/components/atoms/typography';
 
+import FormErrorMessage from '@/components/atoms/form-error-message';
 import type { NextPage } from 'next';
 
 const About: NextPage = () => {
@@ -77,12 +78,18 @@ const About: NextPage = () => {
           <br />
           <br />
           <h2 className="decoration-sky-500">
-            Button Componet color=default fullWidth=true disabled=true{' '}
+            Button Componet color=default fullWidth=true disabled=true
           </h2>
           {/* <!-- 作成したボタンコンポーネントを利用  --> */}
           <Button color={'default'} fullWidth={true} disabled={true}>
             Button Componet
           </Button>
+          <br />
+          <br />
+          <h1 className="decoration-sky-500">FormErrorMessage</h1>
+          <FormErrorMessage>FormErrorMessage Component</FormErrorMessage>
+          <br />
+          <br />
 
           <ul role="list" className="divide-y divide-slate-200 p-6">
             <li className="flex py-4 first:pt-0 last:pb-0">
