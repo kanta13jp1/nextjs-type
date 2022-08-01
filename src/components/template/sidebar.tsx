@@ -117,12 +117,12 @@ export const Slidebar = ({
     <>
       <div
         onClick={toggle}
-        className={`fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden ${
+        className={`invisible fixed inset-0 z-20 bg-black opacity-50 transition-opacity md:visible lg:hidden ${
           sidebarOpen ? 'block' : 'hidden'
         }`}
       ></div>
       <div
-        className={`fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto bg-gray-900 transition duration-300 lg:static lg:inset-0 lg:translate-x-0${
+        className={`invisible fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto bg-gray-900 transition duration-300 md:visible lg:static lg:inset-0 lg:translate-x-0 ${
           sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
         }`}
       >
