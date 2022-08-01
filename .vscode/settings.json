@@ -12,5 +12,14 @@
   "[markdown]": {
     "files.trimTrailingWhitespace": false // Markdown ファイルの末尾の空白を取り除く
   },
-  "cSpell.words": ["classname", "hookform", "Navi", "Noto", "Reounded", "tailwindcss", "toastify"]
+  "cSpell.words": [
+    "classname",
+    "hookform",
+    "lindford",
+    "Navi",
+    "Noto",
+    "Reounded",
+    "tailwindcss",
+    "toastify"
+  ]
 }

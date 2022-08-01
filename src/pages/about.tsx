@@ -94,28 +94,52 @@ const About: NextPage = () => {
 
           <ul role="list" className="divide-y divide-slate-200 p-6">
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image
+                className="rounded-full"
+                src="/img/erin-lindford.jpg"
+                width="40"
+                height="40"
+                alt=""
+              />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image
+                className="rounded-full"
+                src="/img/erin-lindford.jpg"
+                width="40"
+                height="40"
+                alt=""
+              />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image
+                className="rounded-full"
+                src="/img/erin-lindford.jpg"
+                width="40"
+                height="40"
+                alt=""
+              />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image
+                className="rounded-full"
+                src="/img/erin-lindford.jpg"
+                width="40"
+                height="40"
+                alt=""
+              />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
