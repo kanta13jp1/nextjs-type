@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import Button from '@/components/atoms/button';
+import FormErrorMessage from '@/components/atoms/form-error-message';
 import Typography from '@/components/atoms/typography';
 
-import FormErrorMessage from '@/components/atoms/form-error-message';
 import type { NextPage } from 'next';
 
 const About: NextPage = () => {
@@ -93,67 +94,67 @@ const About: NextPage = () => {
 
           <ul role="list" className="divide-y divide-slate-200 p-6">
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <img className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
+              <Image className="h-10 w-10 rounded-full" src="/img/erin-lindford.jpg" alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
               </div>
             </li>
           </ul>
-          <p className="text-right hover:text-left text-base">
+          <p className="text-right text-base hover:text-left">
             text-right hover:text-left text-base
           </p>
-          <p className="text-left hover:text-center text-lg">text-left hover:text-center text-lg</p>
-          <p className="text-center hover:text-right text-xl">
+          <p className="text-left text-lg hover:text-center">text-left hover:text-center text-lg</p>
+          <p className="text-center text-xl hover:text-right">
             text-center hover:text-right text-xl
           </p>
           <ul role="list" className="divide-y divide-slate-200 p-6">
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-900 text-slate-100">
+            <li className="flex bg-gray-900 py-4 text-slate-100 first:pt-0 last:pb-0">
               bg-gray-900 text-slate-100
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-800 text-slate-200">
+            <li className="flex bg-gray-800 py-4 text-slate-200 first:pt-0 last:pb-0">
               bg-gray-800 text-slate-200
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-700 text-slate-300">
+            <li className="flex bg-gray-700 py-4 text-slate-300 first:pt-0 last:pb-0">
               bg-gray-700 text-slate-300
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-600 text-slate-400">
+            <li className="flex bg-gray-600 py-4 text-slate-400 first:pt-0 last:pb-0">
               bg-gray-600 text-slate-400
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-500 text-slate-500">
+            <li className="flex bg-gray-500 py-4 text-slate-500 first:pt-0 last:pb-0">
               bg-gray-500 text-slate-500
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-400 text-slate-600">
+            <li className="flex bg-gray-400 py-4 text-slate-600 first:pt-0 last:pb-0">
               bg-gray-400 text-slate-600
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-300 text-slate-700">
+            <li className="flex bg-gray-300 py-4 text-slate-700 first:pt-0 last:pb-0">
               bg-gray-300 text-slate-700
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-200 text-slate-800">
+            <li className="flex bg-gray-200 py-4 text-slate-800 first:pt-0 last:pb-0">
               bg-gray-200 text-slate-800
             </li>
-            <li className="flex py-4 first:pt-0 last:pb-0 bg-gray-100 text-slate-900">
+            <li className="flex bg-gray-100 py-4 text-slate-900 first:pt-0 last:pb-0">
               bg-gray-100 text-slate-900
             </li>
           </ul>
