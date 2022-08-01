@@ -49,6 +49,13 @@ const Flex: NextPage = () => {
               03 bg-yellow-300 px-8 pt-12 pb-4
             </div>
           </div>
+          <br />
+          <div className="relative h-48 bg-green-200">
+            <p>relative h-48 bg-green-200</p>
+            <div className="absolute bottom-0 left-0 bg-sky-300">
+              <p>absolute bottom-0 left-0 bg-sky-300</p>
+            </div>
+          </div>
         </main>
       </div>
     </div>

@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
 const FontFamily: NextPage = () => {
   return (
     <div className="container mx-auto px-6 py-8">
-      <div className="flex min-h-screen flex-col items-top justify-top py-0 px-2">
+      <div className="items-top justify-top flex min-h-screen flex-col py-0 px-2">
         <Head>
           <title>FontFamily</title>
         </Head>
@@ -25,6 +25,21 @@ const FontFamily: NextPage = () => {
           <p className="font-mono text-2xl">
             font-mono The quick brown fox jumps over the lazy dog.
           </p>
+          <br />
+          <br />
+          <p className="font-light">font-light The quick brown fox ...</p>
+          <br />
+          <br />
+          <p className="font-normal">font-normal The quick brown fox ...</p>
+          <br />
+          <br />
+          <p className="font-medium">font-medium The quick brown fox ...</p>
+          <br />
+          <br />
+          <p className="font-semibold">font-semibold The quick brown fox ...</p>
+          <br />
+          <br />
+          <p className="font-bold">font-bold The quick brown fox ...</p>
           <br />
           <br />
         </main>
