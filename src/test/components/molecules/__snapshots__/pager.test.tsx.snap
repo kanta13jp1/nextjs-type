@@ -81,25 +81,25 @@ exports[`Pager components matches snapshot 1`] = `
             </svg>
           </a>
           <a
-            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium1 z-10 cursor-not-allowed border-indigo-500 bg-indigo-50 text-indigo-600"
+            class="page-link-1 relative inline-flex items-center border px-4 py-2 text-sm font-medium z-10 cursor-not-allowed border-indigo-500 bg-indigo-50 text-indigo-600"
             href="#"
           >
             1
           </a>
           <a
-            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium2 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            class="page-link-2 relative inline-flex items-center border px-4 py-2 text-sm font-medium border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             href="#"
           >
             2
           </a>
           <a
-            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium3 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            class="page-link-3 relative inline-flex items-center border px-4 py-2 text-sm font-medium border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             href="#"
           >
             3
           </a>
           <a
-            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium4 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            class="page-link-4 relative inline-flex items-center border px-4 py-2 text-sm font-medium border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             href="#"
           >
             4
@@ -110,7 +110,7 @@ exports[`Pager components matches snapshot 1`] = `
             ...
           </span>
           <a
-            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium10 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            class="page-link-10 relative inline-flex items-center border px-4 py-2 text-sm font-medium border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             href="#"
           >
             10

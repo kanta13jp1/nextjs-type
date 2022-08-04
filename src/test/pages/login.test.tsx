@@ -39,9 +39,9 @@ class Page {
     return this.container.querySelector('#rememberMe') as Element;
   }
 
-  // 確認モーダル(): Element {
-  //   return this.container.querySelector('.modal-dialog') as Element;
-  // }
+  確認モーダル(): Element {
+    return this.container.querySelector('.modal-dialog') as Element;
+  }
 
   確認モーダルタイトル(): Element {
     return this.container.querySelector('.modal-title') as Element;
@@ -187,8 +187,8 @@ describe('Login page', () => {
       await act(async () => {
         page.オートログインチェック();
       });
-      // expect(page.確認モーダル()).toBeTruthy();
-      // expect(page.確認モーダルメッセージ().textContent).toEqual('自動ログインを有効にしますか？');
+      expect(page.確認モーダル()).toBeTruthy();
+      expect(page.確認モーダルメッセージ().textContent).toEqual('自動ログインを有効にしますか？');
     });
     it('オートログイン設定状態でオートログインチェックボックスをチェックしたとき、無効にする旨の確認ダイアログが表示されること', async () => {
       setCookie(null, 'rememberMe', 'true');
@@ -197,8 +197,8 @@ describe('Login page', () => {
       await act(async () => {
         page.オートログインチェック();
       });
-      // expect(page.確認モーダル()).toBeTruthy();
-      // expect(page.確認モーダルメッセージ().textContent).toEqual('自動ログインを無効にしますか？');
+      expect(page.確認モーダル()).toBeTruthy();
+      expect(page.確認モーダルメッセージ().textContent).toEqual('自動ログインを無効にしますか？');
     });
 
     it('自動ログイン有効の確認ダイアログが表示され、OKボタンを押したとき、自動ログイン設定がcookieに反映されること', async () => {
@@ -212,7 +212,7 @@ describe('Login page', () => {
       await act(async () => {
         page.確認モーダルサブミットボタンクリック();
       });
-      // expect(parseCookies(null).rememberMe).toEqual('true');
+      expect(parseCookies(null).rememberMe).toEqual('true');
     });
 
     it('自動ログイン無効の確認ダイアログが表示され、OKボタンを押したとき、自動ログイン設定がcookieに反映されること', async () => {
@@ -226,7 +226,7 @@ describe('Login page', () => {
       await act(async () => {
         page.確認モーダルサブミットボタンクリック();
       });
-      // expect(parseCookies(null).rememberMe).not.toBeTruthy();
+      expect(parseCookies(null).rememberMe).not.toBeTruthy();
     });
   });
 
@@ -244,11 +244,11 @@ describe('Login page', () => {
         page.パスワード入力('Password1?');
         page.ログインボタンクリック();
       });
-      // expect(axios.put).toBeCalledTimes(1);
-      // expect(axios.put).toBeCalledWith('/api/auth', {
-      //   id: 'test@test.com',
-      //   password: 'Password1?',
-      // });
+      expect(axios.put).toBeCalledTimes(1);
+      expect(axios.put).toBeCalledWith('/api/auth', {
+        id: 'test@test.com',
+        password: 'Password1?',
+      });
     });
 
     it('ログイン時に、認証APIが認証エラー（401）を返すとき、認証エラーのアラートダイアログが表示されること', async () => {
@@ -266,11 +266,11 @@ describe('Login page', () => {
         page.パスワード入力('Password1?');
         page.ログインボタンクリック();
       });
-      // expect(page.確認モーダル()).toBeTruthy();
-      // expect(page.確認モーダルタイトル().textContent).toEqual('認証エラー');
-      // expect(page.確認モーダルメッセージ().textContent).toEqual(
-      //   'Emailもしくはパスワードが誤っています',
-      // );
+      expect(page.確認モーダル()).toBeTruthy();
+      expect(page.確認モーダルタイトル().textContent).toEqual('認証エラー');
+      expect(page.確認モーダルメッセージ().textContent).toEqual(
+        'Emailもしくはパスワードが誤っています',
+      );
     });
 
     it('ログイン時に、認証APIがシステムエラー（500）を返すとき、システムエラーのアラートダイアログが表示されること', async () => {
@@ -288,11 +288,11 @@ describe('Login page', () => {
         page.パスワード入力('Password1?');
         page.ログインボタンクリック();
       });
-      // expect(page.確認モーダル()).toBeTruthy();
-      // expect(page.確認モーダルタイトル().textContent).toEqual('システムエラー');
-      // expect(page.確認モーダルメッセージ().textContent).toEqual(
-      //   'エラーが発生しました。しばらくしてからもう一度お試しください。',
-      // );
+      expect(page.確認モーダル()).toBeTruthy();
+      expect(page.確認モーダルタイトル().textContent).toEqual('システムエラー');
+      expect(page.確認モーダルメッセージ().textContent).toEqual(
+        'エラーが発生しました。しばらくしてからもう一度お試しください。',
+      );
     });
   });
 });

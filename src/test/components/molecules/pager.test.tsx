@@ -115,20 +115,20 @@ describe('Pager components', () => {
     // [1] 2 3 4 ... 10
     const { page1, page2, page3, page4, page5, page9, page10 } = page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).toContain('cursor-not-allowed');
 
-    // expect(page2).toBeTruthy();
-    // expect(page2.className).not.toContain('cursor-not-allowed');
+    expect(page2).toBeTruthy();
+    expect(page2.className).not.toContain('cursor-not-allowed');
 
-    // expect(page3).toBeTruthy();
-    // expect(page4).toBeTruthy();
+    expect(page3).toBeTruthy();
+    expect(page4).toBeTruthy();
 
-    // expect(page5).toBeNull();
-    // expect(page9).toBeNull();
+    expect(page5).toBeNull();
+    expect(page9).toBeNull();
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在2ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -145,23 +145,23 @@ describe('Pager components', () => {
     // 1 [2] 3 4 5 ... 10
     const { page1, page2, page3, page4, page5, page6, page9, page10 } = page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
-    // expect(page2).toBeTruthy();
-    // expect(page2.className).toContain('cursor-not-allowed');
+    expect(page2).toBeTruthy();
+    expect(page2.className).toContain('cursor-not-allowed');
 
-    // expect(page3).toBeTruthy();
-    // expect(page3.className).not.toContain('cursor-not-allowed');
+    expect(page3).toBeTruthy();
+    expect(page3.className).not.toContain('cursor-not-allowed');
 
-    // expect(page4).toBeTruthy();
-    // expect(page5).toBeTruthy();
+    expect(page4).toBeTruthy();
+    expect(page5).toBeTruthy();
 
-    // expect(page6).toBeNull();
-    // expect(page9).toBeNull();
+    expect(page6).toBeNull();
+    expect(page9).toBeNull();
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在3ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -179,26 +179,26 @@ describe('Pager components', () => {
     const { page1, page2, page3, page4, page5, page6, page7, page9, page10 } =
       page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
-    // expect(page2).toBeTruthy();
-    // expect(page2.className).not.toContain('cursor-not-allowed');
+    expect(page2).toBeTruthy();
+    expect(page2.className).not.toContain('cursor-not-allowed');
 
-    // expect(page3).toBeTruthy();
-    // expect(page3.className).toContain('cursor-not-allowed');
+    expect(page3).toBeTruthy();
+    expect(page3.className).toContain('cursor-not-allowed');
 
-    // expect(page4).toBeTruthy();
-    // expect(page4.className).not.toContain('cursor-not-allowed');
+    expect(page4).toBeTruthy();
+    expect(page4.className).not.toContain('cursor-not-allowed');
 
-    // expect(page5).toBeTruthy();
-    // expect(page6).toBeTruthy();
+    expect(page5).toBeTruthy();
+    expect(page6).toBeTruthy();
 
-    // expect(page7).toBeNull();
-    // expect(page9).toBeNull();
+    expect(page7).toBeNull();
+    expect(page9).toBeNull();
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在4ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -218,29 +218,29 @@ describe('Pager components', () => {
     const { page1, page2, page3, page4, page5, page6, page7, page8, page9, page10 } =
       page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
-    // expect(page2).toBeTruthy();
-    // expect(page2.className).not.toContain('cursor-not-allowed');
+    expect(page2).toBeTruthy();
+    expect(page2.className).not.toContain('cursor-not-allowed');
 
-    // expect(page3).toBeTruthy();
-    // expect(page3.className).not.toContain('cursor-not-allowed');
+    expect(page3).toBeTruthy();
+    expect(page3.className).not.toContain('cursor-not-allowed');
 
-    // expect(page4).toBeTruthy();
-    // expect(page4.className).toContain('cursor-not-allowed');
+    expect(page4).toBeTruthy();
+    expect(page4.className).toContain('cursor-not-allowed');
 
-    // expect(page5).toBeTruthy();
-    // expect(page5.className).not.toContain('cursor-not-allowed');
+    expect(page5).toBeTruthy();
+    expect(page5.className).not.toContain('cursor-not-allowed');
 
-    // expect(page6).toBeTruthy();
-    // expect(page7).toBeTruthy();
+    expect(page6).toBeTruthy();
+    expect(page7).toBeTruthy();
 
-    // expect(page8).toBeNull();
-    // expect(page9).toBeNull();
+    expect(page8).toBeNull();
+    expect(page9).toBeNull();
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在5ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -258,31 +258,31 @@ describe('Pager components', () => {
     const { page1, page2, page3, page4, page5, page6, page7, page8, page9, page10 } =
       page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
-    // expect(page2).toBeTruthy();
-    // expect(page2.className).not.toContain('cursor-not-allowed');
+    expect(page2).toBeTruthy();
+    expect(page2.className).not.toContain('cursor-not-allowed');
 
-    // expect(page3).toBeTruthy();
-    // expect(page3.className).not.toContain('cursor-not-allowed');
+    expect(page3).toBeTruthy();
+    expect(page3.className).not.toContain('cursor-not-allowed');
 
-    // expect(page4).toBeTruthy();
-    // expect(page4.className).not.toContain('cursor-not-allowed');
+    expect(page4).toBeTruthy();
+    expect(page4.className).not.toContain('cursor-not-allowed');
 
-    // expect(page5).toBeTruthy();
-    // expect(page5.className).toContain('cursor-not-allowed');
+    expect(page5).toBeTruthy();
+    expect(page5.className).toContain('cursor-not-allowed');
 
-    // expect(page6).toBeTruthy();
-    // expect(page6.className).not.toContain('cursor-not-allowed');
+    expect(page6).toBeTruthy();
+    expect(page6.className).not.toContain('cursor-not-allowed');
 
-    // expect(page7).toBeTruthy();
-    // expect(page8).toBeTruthy();
+    expect(page7).toBeTruthy();
+    expect(page8).toBeTruthy();
 
-    // expect(page9).toBeNull();
+    expect(page9).toBeNull();
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在6ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -300,30 +300,30 @@ describe('Pager components', () => {
     const { page1, page2, page3, page4, page5, page6, page7, page8, page9, page10 } =
       page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
-    // expect(page2).toBeNull();
+    expect(page2).toBeNull();
 
-    // expect(page3).toBeTruthy();
-    // expect(page3.className).not.toContain('cursor-not-allowed');
+    expect(page3).toBeTruthy();
+    expect(page3.className).not.toContain('cursor-not-allowed');
 
-    // expect(page4).toBeTruthy();
-    // expect(page4.className).not.toContain('cursor-not-allowed');
+    expect(page4).toBeTruthy();
+    expect(page4.className).not.toContain('cursor-not-allowed');
 
-    // expect(page5).toBeTruthy();
-    // expect(page5.className).not.toContain('cursor-not-allowed');
+    expect(page5).toBeTruthy();
+    expect(page5.className).not.toContain('cursor-not-allowed');
 
-    // expect(page6).toBeTruthy();
-    // expect(page6.className).toContain('cursor-not-allowed');
+    expect(page6).toBeTruthy();
+    expect(page6.className).toContain('cursor-not-allowed');
 
-    // expect(page7).toBeTruthy();
-    // expect(page7.className).not.toContain('cursor-not-allowed');
+    expect(page7).toBeTruthy();
+    expect(page7.className).not.toContain('cursor-not-allowed');
 
-    // expect(page8).toBeTruthy();
-    // expect(page9).toBeTruthy();
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).not.toContain('cursor-not-allowed');
+    expect(page8).toBeTruthy();
+    expect(page9).toBeTruthy();
+    expect(page10).toBeTruthy();
+    expect(page10.className).not.toContain('cursor-not-allowed');
   });
 
   it('全10ページ かつ 現在10ページ目を指定しているとき、ページャの数が期待値どおりであること', () => {
@@ -341,8 +341,8 @@ describe('Pager components', () => {
     const { page1, page2, page3, page4, page5, page6, page7, page8, page9, page10 } =
       page.ページリンク一覧();
 
-    // expect(page1).toBeTruthy();
-    // expect(page1.className).not.toContain('cursor-not-allowed');
+    expect(page1).toBeTruthy();
+    expect(page1.className).not.toContain('cursor-not-allowed');
 
     expect(page2).toBeNull();
     expect(page3).toBeNull();
@@ -350,16 +350,16 @@ describe('Pager components', () => {
     expect(page5).toBeNull();
     expect(page6).toBeNull();
 
-    // expect(page7).toBeTruthy();
-    // expect(page7.className).not.toContain('cursor-not-allowed');
+    expect(page7).toBeTruthy();
+    expect(page7.className).not.toContain('cursor-not-allowed');
 
-    // expect(page8).toBeTruthy();
-    // expect(page8.className).not.toContain('cursor-not-allowed');
+    expect(page8).toBeTruthy();
+    expect(page8.className).not.toContain('cursor-not-allowed');
 
-    // expect(page9).toBeTruthy();
-    // expect(page9.className).not.toContain('cursor-not-allowed');
+    expect(page9).toBeTruthy();
+    expect(page9.className).not.toContain('cursor-not-allowed');
 
-    // expect(page10).toBeTruthy();
-    // expect(page10.className).toContain('cursor-not-allowed');
+    expect(page10).toBeTruthy();
+    expect(page10.className).toContain('cursor-not-allowed');
   });
 });
