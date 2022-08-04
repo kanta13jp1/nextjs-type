@@ -73,8 +73,8 @@ export const LoginPage = ({
     },
   });
 
-  captains.log(watch());
-  captains.log('errors', errors);
+  // captains.log(watch());
+  // captains.log('errors', errors);
 
   useEffect(() => {
     const rememberMe = Boolean(parseCookies(null).rememberMe);
@@ -260,7 +260,7 @@ export const LoginPage = ({
                     onClick={rememberMe}
                     id="rememberMe"
                     type="checkbox"
-                    className="form-checkbox text-indigo-600"
+                    className="text-indigo-600"
                     {...register('rememberMe')}
                   />
                   <Typography variant={'body2'} classes={['mx-2']}>

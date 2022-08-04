@@ -103,7 +103,7 @@ export const Confirm = ({
 
   return (
     <div
-      className="modal-dialog fixed inset-0 z-10 overflow-y-auto"
+      className="fixed inset-0 z-10 overflow-y-auto"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"

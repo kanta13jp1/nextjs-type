@@ -22,7 +22,7 @@ const PageLink = ({
     <a
       href="#"
       onClick={() => active && handleClick(page)}
-      className={`page-link- relative inline-flex items-center border px-4 py-2 text-sm font-medium${page} ${
+      className={`relative inline-flex items-center border px-4 py-2 text-sm font-medium${page} ${
         active
           ? 'border-gray-300 bg-white text-gray-500 hover:bg-gray-50'
           : 'z-10 cursor-not-allowed border-indigo-500 bg-indigo-50 text-indigo-600'

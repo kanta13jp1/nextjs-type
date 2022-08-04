@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pager components matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+  >
+    <div
+      class="flex flex-1 justify-between sm:hidden"
+    >
+      <a
+        class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 cursor-not-allowed"
+        href="#"
+      >
+        Previous
+      </a>
+      <a
+        class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+        href="#"
+      >
+        Next
+      </a>
+    </div>
+    <div
+      class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between"
+    >
+      <div>
+        <p
+          class="text-sm text-gray-700"
+        >
+          <span>
+            Showing
+          </span>
+          <span
+            class="mx-1 font-medium"
+          >
+            1
+          </span>
+          <span>
+            to
+          </span>
+          <span
+            class="mx-1 font-medium"
+          >
+            7
+          </span>
+          <span>
+            of
+          </span>
+          <span
+            class="mx-1 font-medium"
+          >
+            97
+          </span>
+          <span>
+            results
+          </span>
+        </p>
+      </div>
+      <div>
+        <nav
+          aria-label="Pagination"
+          class="relative z-0 inline-flex -space-x-px rounded-md shadow-sm"
+        >
+          <a
+            class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 cursor-not-allowed"
+            href="#"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium1 z-10 cursor-not-allowed border-indigo-500 bg-indigo-50 text-indigo-600"
+            href="#"
+          >
+            1
+          </a>
+          <a
+            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium2 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            href="#"
+          >
+            2
+          </a>
+          <a
+            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium3 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            href="#"
+          >
+            3
+          </a>
+          <a
+            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium4 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            href="#"
+          >
+            4
+          </a>
+          <span
+            class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700"
+          >
+            ...
+          </span>
+          <a
+            class="relative inline-flex items-center border px-4 py-2 text-sm font-medium10 border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+            href="#"
+          >
+            10
+          </a>
+          <a
+            class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            href="#"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
 const FontFamily: NextPage = () => {
   return (
     <div className="container mx-auto px-6 py-8">
-      <div className="items-top justify-top flex min-h-screen flex-col py-0 px-2">
+      <div className="flex min-h-screen flex-col items-start justify-start py-0 px-2">
         <Head>
           <title>FontFamily</title>
         </Head>

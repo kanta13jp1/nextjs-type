@@ -27,7 +27,7 @@ const initState = (): GlobalState => {
     ? (_.attempt(JSON.parse.bind(null, cookie.state)) as GlobalState)
     : { ...INIT_STATE };
 
-  captains.log(state);
+  // captains.log(state);
   if (_.isError(state) || !state) {
     state = { ...INIT_STATE };
   }
