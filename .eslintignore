@@ -1,4 +1,5 @@
 node_modules/
+src/test/*
 tailwind.config.js
 next.config.js
 postcss.config.js
