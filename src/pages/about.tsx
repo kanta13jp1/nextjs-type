@@ -13,8 +13,14 @@ const About: NextPage = () => {
       <div className="flex min-h-screen flex-col items-center justify-center py-0 px-2">
         <Head>
           <title>About Page</title>
+          <meta name="description" content="Checkout our cool page" key="desc" />
+          <meta property="og:title" content="Social Title for Cool Page" />
+          <meta property="og:description" content="And a social description for our cool page" />
+          <meta property="og:image" content="https://example.com/images/cool-page.jpg" />
         </Head>
         <main>
+          <h1>Cool Page</h1>
+          <p>This is a cool page. It has lots of cool content!</p>
           <h1 className="decoration-sky-500">ここは概要ページです</h1>
           <br />
           <h2 className="decoration-sky-500">
