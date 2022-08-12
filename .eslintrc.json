@@ -48,7 +48,7 @@
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
     ],
     "tailwindcss/classnames-order": "warn",
-    "tailwindcss/no-custom-classname": ["warn", { "whitelist": ["page-link-", "modal-(*)"] }],
+    "tailwindcss/no-custom-classname": ["warn", { "whitelist": ["page-link-", "modal-"] }],
     "tailwindcss/no-contradicting-classname": "error"
   }
 }
