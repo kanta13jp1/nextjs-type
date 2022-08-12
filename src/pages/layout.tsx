@@ -11,6 +11,9 @@ const Layout = ({ children }: Props) => {
         <Link href="/about">
           <a>About</a>
         </Link>
+        <Link href="/product-page">
+          <a>ProductPage</a>
+        </Link>
         <Link href="/text-color">
           <a>TextColor</a>
         </Link>
