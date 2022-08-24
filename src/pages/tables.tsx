@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { ReactElement } from 'react';
 
-import type { NextPage } from 'next';
+import DashboardLayout from '@/components/template/dashboard-layout';
 
-const Tables: NextPage = () => {
+export default function Tables(): JSX.Element {
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="flex min-h-screen flex-col items-start justify-start py-0 px-2">
@@ -111,6 +112,8 @@ const Tables: NextPage = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Tables;
+Tables.getLayout = function getLayout(page: ReactElement) {
+  return <DashboardLayout title={'テーブル'}>{page}</DashboardLayout>;
+};
