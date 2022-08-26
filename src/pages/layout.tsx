@@ -1,10 +1,19 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import useSWR from 'swr';
+
+export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Layout = ({ children }: Props) => {
+  const { data, error } = useSWR('/api/profile-data', fetcher);
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
   return (
     <div>
       <nav className="flex flex-wrap space-x-4 bg-red-500 p-2 font-bold text-white">
+        <div>
+          Name : {data.name} Bio : {data.bio}
+        </div>
         <Link href="/home">
           <a>Home</a>
         </Link>
