@@ -1,9 +1,11 @@
+import Image from 'next/future/image';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import Button from '@/components/atoms/button';
 import FormErrorMessage from '@/components/atoms/form-error-message';
 import Typography from '@/components/atoms/typography';
+
+import FacePicture from '../../public/img/erin-lindford.jpg';
 
 import type { NextPage } from 'next';
 
@@ -100,13 +102,21 @@ const About: NextPage = () => {
 
           <ul role="list" className="divide-y divide-slate-200 p-6">
             <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image
-                className="rounded-full"
-                src="/img/erin-lindford.jpg"
-                width="40"
-                height="40"
-                alt=""
-              />
+              <Image className="rounded-full" src={FacePicture} alt="" />
+              <div className="ml-3 overflow-hidden">
+                <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
+                <p className="truncate text-sm text-slate-500">test@test.com</p>
+              </div>
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0">
+              <Image className="" src={FacePicture} alt="" />
+              <div className="ml-3 overflow-hidden">
+                <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
+                <p className="truncate text-sm text-slate-500">test@test.com</p>
+              </div>
+            </li>
+            <li className="flex py-4 first:pt-0 last:pb-0">
+              <Image className="h-10 w-10 rounded-full" src={FacePicture} alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
                 <p className="truncate text-sm text-slate-500">test@test.com</p>
@@ -116,35 +126,10 @@ const About: NextPage = () => {
               <Image
                 className="rounded-full"
                 src="/img/erin-lindford.jpg"
-                width="40"
-                height="40"
+                width={150}
+                height={150}
                 alt=""
-              />
-              <div className="ml-3 overflow-hidden">
-                <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
-                <p className="truncate text-sm text-slate-500">test@test.com</p>
-              </div>
-            </li>
-            <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image
-                className="rounded-full"
-                src="/img/erin-lindford.jpg"
-                width="40"
-                height="40"
-                alt=""
-              />
-              <div className="ml-3 overflow-hidden">
-                <p className="text-sm font-medium text-slate-900">Erin Lindford</p>
-                <p className="truncate text-sm text-slate-500">test@test.com</p>
-              </div>
-            </li>
-            <li className="flex py-4 first:pt-0 last:pb-0">
-              <Image
-                className="rounded-full"
-                src="/img/erin-lindford.jpg"
-                width="40"
-                height="40"
-                alt=""
+                priority
               />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">Erin Lindford</p>

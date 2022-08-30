@@ -1,5 +1,8 @@
+import Image from 'next/future/image';
 import Head from 'next/head';
-import Image from 'next/image';
+
+import FacePicture from '../../public/img/erin-lindford.jpg';
+import LogoPicture from '../../public/img/logo.svg';
 
 export default function Home() {
   return (
@@ -11,7 +14,7 @@ export default function Home() {
       <h1 className="decoration-sky-500">Hello Next.js</h1>
       <div className="mx-auto flex max-w-sm items-center space-x-8 rounded-xl bg-white p-6 shadow-lg">
         <div className="shrink-0">
-          <Image alt="ChitChat Logo" src="/img/logo.svg" width={192} height={192} />
+          <Image className="h-48 w-48" alt="ChitChat Logo" src={LogoPicture} />
         </div>
         <div>
           <div className="text-xl font-medium text-black">ChitChat</div>
@@ -20,11 +23,9 @@ export default function Home() {
       </div>
       <div className="mx-auto max-w-sm space-y-2 rounded-xl bg-white p-8 shadow-lg sm:flex sm:items-center sm:space-y-0 sm:space-x-6 sm:py-4">
         <Image
-          className="mx-auto block rounded-full sm:mx-0 sm:shrink-0"
-          src="/img/erin-lindford.jpg"
+          className="mx-auto block h-48 w-48 rounded-full sm:mx-0 sm:shrink-0"
+          src={FacePicture}
           alt="Woman's Face"
-          width={192}
-          height={192}
         />
         <div className="space-y-2 text-center sm:text-left">
           <div className="space-y-0.5">
