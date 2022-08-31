@@ -70,5 +70,16 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow': {
+          textShadow: '1px 1px 1px #3c5c5e',
+        },
+      };
+
+      addUtilities(newUtilities);
+    },
+  ],
 };

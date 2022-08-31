@@ -44,8 +44,14 @@ const Layout = ({ children }: Props) => {
         <Link href="/layout-responsive">
           <a>layout-responsive</a>
         </Link>
+        <Link href="/layout-fixed">
+          <a>layout-fixed</a>
+        </Link>
         <Link href="/layout-fill">
           <a>layout-fill</a>
+        </Link>
+        <Link href="/background">
+          <a>Background</a>
         </Link>
         <Link href="/">
           <a>Dashbord</a>

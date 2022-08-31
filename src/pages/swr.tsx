@@ -1,5 +1,7 @@
 import useSWR from 'swr';
 
+import ViewSource from '@/components/view-source';
+
 export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function Profile() {
@@ -13,6 +15,7 @@ function Profile() {
   // render data
   return (
     <div>
+      <ViewSource pathname="pages/swr.tsx" />
       Name : {data.name} Bio : {data.bio}
     </div>
   );
