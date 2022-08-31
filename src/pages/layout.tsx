@@ -41,6 +41,9 @@ const Layout = ({ children }: Props) => {
         <Link href="/layout-intrinsic">
           <a>layout-intrinsic</a>
         </Link>
+        <Link href="/layout-responsive">
+          <a>layout-responsive</a>
+        </Link>
         <Link href="/layout-fill">
           <a>layout-fill</a>
         </Link>
