@@ -53,6 +53,9 @@ const Layout = ({ children }: Props) => {
         <Link href="/background">
           <a>Background</a>
         </Link>
+        <Link href="/placeholder">
+          <a>placeholder-blur</a>
+        </Link>
         <Link href="/">
           <a>Dashbord</a>
         </Link>
