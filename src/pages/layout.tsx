@@ -56,6 +56,9 @@ const Layout = ({ children }: Props) => {
         <Link href="/placeholder">
           <a>placeholder-blur</a>
         </Link>
+        <Link href="/shimmer">
+          <a>Shimmer</a>
+        </Link>
         <Link href="/">
           <a>Dashbord</a>
         </Link>
