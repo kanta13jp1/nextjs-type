@@ -38,6 +38,12 @@ const Layout = ({ children }: Props) => {
         <Link href="/swr">
           <a>SWR</a>
         </Link>
+        <Link href="/layout-intrinsic">
+          <a>layout-intrinsic</a>
+        </Link>
+        <Link href="/layout-fill">
+          <a>layout-fill</a>
+        </Link>
         <Link href="/">
           <a>Dashbord</a>
         </Link>

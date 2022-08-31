@@ -17,6 +17,20 @@ module.exports = {
       mono: [...defaultTheme.fontFamily.mono],
     },
     extend: {
+      keyframes: {
+        wave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(-25deg)' },
+          '40%': { transform: 'rotate(10deg)' },
+          '60%': { transform: 'rotate(-25deg)' },
+          '80%': { transform: 'rotate(10deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+      },
+      animation: {
+        wave: 'wave 560ms ease-in-out',
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
       colors: {
         // 開発で使用するカラーを設定する
         // `DEFAULT` で設定しているものは、`text-theme` や `bg-primary` のように使用できる
