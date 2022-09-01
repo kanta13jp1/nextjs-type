@@ -11,6 +11,10 @@ const nextConfig = {
       allowFutureImage: true,
     },
   },
+  images: {
+    domains: ['assets.vercel.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
 };
 
 module.exports = nextConfig;
