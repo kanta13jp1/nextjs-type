@@ -12,7 +12,7 @@ const nextConfig = {
     },
   },
   images: {
-    domains: ['assets.vercel.com'],
+    domains: ['assets.vercel.com', 'new-kokumin.jp'],
     formats: ['image/avif', 'image/webp'],
   },
 };

@@ -4,19 +4,19 @@ import Link from 'next/link';
 import vercel from '../../public/img/vercel.png';
 import ViewSource from '../components/view-source';
 
-const Code = (p: any) => <code className="text-purple-700" {...p} />;
+const Code = (p: any) => <code className="whitespace-pre-wrap text-base text-purple-700" {...p} />;
 
 const Index = () => (
   <div className="pl-16 pr-4">
     <ViewSource pathname="pages/image.tsx" />
     <div className="max-w-5xl">
       <h1>Image Component with Next.js</h1>
-      <p>
+      <p className="m-4">
         This page demonstrates the usage of the{' '}
         <a href="https://nextjs.org/docs/api-reference/next/image">next/image</a> component with
         live examples.
       </p>
-      <p>
+      <p className="m-4">
         This component is designed to{' '}
         <a href="https://nextjs.org/docs/basic-features/image-optimization">
           automatically optimize
@@ -25,7 +25,7 @@ const Index = () => (
       </p>
       <hr className="border-0" />
       <h2 id="layout">Layout</h2>
-      <p>
+      <p className="m-4">
         The <Code>layout</Code> property tells the image to respond differently depending on the
         device size or the container size.
       </p>
@@ -109,6 +109,12 @@ const Index = () => (
         alt="Next.js logo"
         src="https://assets.vercel.com/image/upload/v1538361091/repositories/next-js/next-js-bg.png"
         width={1200}
+        height={400}
+      />
+      <Image
+        alt="鈴木敦"
+        src="https://new-kokumin.jp/wp-content/uploads/2021/11/b654155b8bc5da4509cffa71364a1804-e1659594423819.jpeg"
+        width={400}
         height={400}
       />
       <hr className="border-0" />
