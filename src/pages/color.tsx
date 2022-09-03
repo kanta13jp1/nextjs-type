@@ -18,7 +18,7 @@ const rgbDataURL = (r: number, g: number, b: number) =>
 
 const Color = () => (
   <div>
-    <ViewSource pathname="pages/color.js" />
+    <ViewSource pathname="pages/color.tsx" />
     <h1>Image Component With Color Data URL</h1>
     <Image
       alt="Dog"

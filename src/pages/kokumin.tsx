@@ -1,7 +1,11 @@
 import Image from 'next/image';
 
+import ViewSource from '@/components/view-source';
+
 const Index = () => (
   <div className="row-auto grid h-screen grid-cols-4 gap-4">
+    <ViewSource pathname="pages/kokumin.tsx" />
+    <div className="text-6xl font-bold">衆議院議員</div>
     <div className="col-span-2 col-start-2 bg-blue-100">
       <Image
         alt="西岡秀子"
@@ -30,8 +34,9 @@ const Index = () => (
         width={300}
         height={300}
       />
-      <p className="text-lg font-bold">玉木雄一郎</p>
+      <p className="text-xl font-bold">玉木雄一郎</p>
       <p>衆議院議員</p>
+      <p>香川2区</p>
     </div>
     <div className="bg-blue-400">
       <Image
@@ -71,8 +76,9 @@ const Index = () => (
         width={100}
         height={100}
       />
-      <h1>長友慎二</h1>
+      <p className="text-xl font-bold">長友慎二</p>
       <p>衆議院議員</p>
+      <p>宮崎2区</p>
     </div>
     <div className="bg-orange-300">
       <Image
@@ -94,7 +100,7 @@ const Index = () => (
       <h1>古川元久</h1>
       <p>衆議院議員</p>
     </div>
-    <div className="bg-orange-500">
+    <div className="col-span-2 bg-orange-500">
       <Image
         alt="齋藤アレックス"
         src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img24.jpg"
@@ -104,6 +110,7 @@ const Index = () => (
       <h1>齋藤アレックス</h1>
       <p>衆議院議員</p>
     </div>
+    <div className="text-6xl font-bold">参議院議員</div>
     <div className=" bg-cyan-100">
       <Image
         alt="浜口誠"
@@ -114,12 +121,12 @@ const Index = () => (
       <h1>浜口誠</h1>
       <p>参議院議員</p>
     </div>
-    <div className="bg-cyan-200">
+    <div className="col-span-2 bg-cyan-200">
       <Image
         alt="田村まみ"
         src="https://new-kokumin.jp/wp-content/uploads/2021/03/DSC02072-scaled-e1659593967494.jpg"
-        width={100}
-        height={100}
+        width={180}
+        height={180}
       />
       <h1>田村まみ</h1>
       <p>参議院議員</p>
@@ -144,14 +151,24 @@ const Index = () => (
       <h1>竹詰仁</h1>
       <p>参議院議員</p>
     </div>
-    <div className="bg-red-100">
+    <div className="col-span-3 bg-red-100">
       <Image
         alt="伊藤孝恵"
         src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img9.jpg"
-        width={120}
-        height={120}
+        width={200}
+        height={200}
       />
       <h1>伊藤孝恵</h1>
+      <p>参議院議員</p>
+    </div>
+    <div className="bg-teal-200">
+      <Image
+        alt="川合孝典"
+        src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img16-1.jpg"
+        width={100}
+        height={100}
+      />
+      <h1>川合孝典</h1>
       <p>参議院議員</p>
     </div>
     <div className="col-span-2 row-span-2 bg-lime-100">
@@ -164,15 +181,16 @@ const Index = () => (
       <h1>大塚耕平</h1>
       <p>参議院議員</p>
     </div>
-    <div className="bg-lime-200">
+    <div className="col-span-2 bg-lime-200">
       <Image
         alt="榛葉賀津也"
         src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img12.jpg"
-        width={150}
-        height={150}
+        width={250}
+        height={250}
       />
-      <h1>榛葉賀津也</h1>
+      <p className="text-xl font-bold">榛葉賀津也</p>
       <p>参議院議員</p>
+      <p>静岡選挙区</p>
     </div>
     <div className="bg-lime-300">
       <Image
@@ -191,18 +209,9 @@ const Index = () => (
         width={150}
         height={150}
       />
-      <h1>舟山康江</h1>
+      <p className="text-xl font-bold">舟山康江</p>
       <p>参議院議員</p>
-    </div>
-    <div className="bg-teal-200">
-      <Image
-        alt="川合孝典"
-        src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img16-1.jpg"
-        width={100}
-        height={100}
-      />
-      <h1>川合孝典</h1>
-      <p>参議院議員</p>
+      <p>山形選挙区</p>
     </div>
   </div>
 );
