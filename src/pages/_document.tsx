@@ -12,6 +12,10 @@ class MyDocument extends Document {
       <Html lang="ja" dir="ltr">
         <Head>
           {/* サイト全体に反映させたいデフォルトの設定を記述する ex) Google Fonts の読み込み */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

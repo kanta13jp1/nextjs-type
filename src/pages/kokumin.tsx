@@ -1,16 +1,17 @@
 import Image from 'next/image';
 
 const Index = () => (
-  <div className="grid h-screen grid-cols-6 grid-rows-5 gap-4">
+  <div className="row-auto grid h-screen grid-cols-4 gap-4">
     <div className="col-span-2 col-start-2 bg-blue-100">
       <Image
-        alt="西川秀子"
+        alt="西岡秀子"
         src="https://new-kokumin.jp/wp-content/uploads/2020/11/member_img4.jpg"
         width={120}
         height={120}
       />
-      <h1>西川秀子</h1>
+      <p className="text-lg font-bold">西岡秀子</p>
       <p>衆議院議員</p>
+      <p>長崎1区</p>
     </div>
     <div className="bg-blue-200">
       <Image
@@ -29,7 +30,7 @@ const Index = () => (
         width={300}
         height={300}
       />
-      <h1>玉木雄一郎</h1>
+      <p className="text-lg font-bold">玉木雄一郎</p>
       <p>衆議院議員</p>
     </div>
     <div className="bg-blue-400">
@@ -39,8 +40,9 @@ const Index = () => (
         width={100}
         height={100}
       />
-      <h1>浅野哲</h1>
+      <p className="text-lg font-bold">浅野哲</p>
       <p>衆議院議員</p>
+      <p>茨城5区</p>
     </div>
     <div className="bg-red-300">
       <Image
