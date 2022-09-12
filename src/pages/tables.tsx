@@ -30,7 +30,7 @@ export default function Tables(): JSX.Element {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b bg-white transition duration-300 ease-in-out hover:bg-gray-100">
+                <tr className="border-b bg-white transition duration-300 ease-in-out odd:bg-white even:bg-slate-50 hover:bg-gray-100">
                   <td className="border-r px-6 py-4 text-sm font-light text-gray-900">
                     The Sliding Mr. Bones (Next Stop, Pottersville)
                   </td>
@@ -39,7 +39,7 @@ export default function Tables(): JSX.Element {
                   </td>
                   <td className="border-r px-6 py-4 text-sm font-light text-gray-900">1961</td>
                 </tr>
-                <tr className="border-b bg-white transition duration-300 ease-in-out hover:bg-gray-100">
+                <tr className="border-b bg-white transition duration-300 ease-in-out odd:bg-white even:bg-slate-50 hover:bg-gray-100">
                   <td className="border-r px-6 py-4 text-sm font-light text-gray-900">
                     Witchy Woman
                   </td>
@@ -48,7 +48,7 @@ export default function Tables(): JSX.Element {
                   </td>
                   <td className="border-r px-6 py-4 text-sm font-light text-gray-900">1972</td>
                 </tr>
-                <tr className="border-b bg-white transition duration-300 ease-in-out hover:bg-gray-100">
+                <tr className="border-b bg-white transition duration-300 ease-in-out odd:bg-white even:bg-slate-50 hover:bg-gray-100">
                   <td className="border-r px-6 py-4 text-sm font-light text-gray-900">
                     Shining Star
                   </td>

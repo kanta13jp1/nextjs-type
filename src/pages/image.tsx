@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import design from '../../public/img/design.drawio.png';
+import drawio from '../../public/img/test.drawio.png';
 import vercel from '../../public/img/vercel.png';
 import ViewSource from '../components/view-source';
 
@@ -95,6 +97,8 @@ const Index = () => (
       </p>
       <p>This image is intentionally large so you have to scroll down to the next image.</p>
       <Image alt="Vercel logo" src={vercel} width={1000} height={1000} />
+      <Image alt="drawio" src={drawio} />
+      <Image alt="design" src={design} />
       <hr className="border-0" />
       <h2 id="external">External Image</h2>
       <p>
